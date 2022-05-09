@@ -6,6 +6,11 @@ class Dashboard extends CI_Controller {
 	public function dashboard_admin()
 	{
 		$this->load->view('admin/dashboard');
+	}
+	
+	public function dashboard_pegawai()
+	{
+		$this->load->view('pegawai/dashboard');
     }
     
 }
