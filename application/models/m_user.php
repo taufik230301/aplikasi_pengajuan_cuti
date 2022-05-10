@@ -3,6 +3,12 @@
 class M_user extends CI_Model
 {
 
+    public function get_all_pegawai()
+    {
+        $hasil = $this->db->query('SELECT * FROM user JOIN user_detail ON user.id_user_detail = user_detail.id_user_detail WHERE id_user_level = 1');
+        return $hasil;
+    }
+
     public function cek_login($username)
     {
         
@@ -24,5 +30,7 @@ class M_user extends CI_Model
         else
             return false;
     }
+
+
 
 }

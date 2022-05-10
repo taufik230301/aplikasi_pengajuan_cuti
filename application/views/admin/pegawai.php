@@ -66,6 +66,13 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            <?php
+                                            $id = 0;
+                                            foreach($pegawai as $i)
+                                            :
+                                            $id++;
+
+                                            ?>
                                             <tr>
                                                 <td>1</td>
                                                 <td>Tufik</td>
@@ -84,15 +91,16 @@
                                                     </div>
                                                     <div class="table-responsive">
                                                         <div class="table table-striped table-hover ">
-                                                            <a href="" data-toggle="modal"
-                                                                data-target="#hapus"
+                                                            <a href="" data-toggle="modal" data-target="#hapus"
                                                                 class="btn btn-danger"><i class="fas fa-trash"></i>
                                                             </a>
                                                         </div>
                                                     </div>
                                                 </td>
-                                
+
                                             </tr>
+
+                                            <?php endforeach; ?>
                                         </tbody>
 
                                     </table>

@@ -53,6 +53,7 @@
                                 </div>
                                 <!-- /.card-header -->
                                 <div class="card-body">
+
                                     <table id="example1" class="table table-bordered table-striped">
                                         <thead>
                                             <tr>
@@ -66,8 +67,15 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                        <?php
+                                            $id = 0;
+                                            foreach($pegawai as $i)
+                                            :
+                                            $id++;
+
+                                            ?>
                                             <tr>
-                                                <td>1</td>
+                                                <td><?=$id?></td>
                                                 <td>Tufik</td>
                                                 <td>Taufiiqul Hakim</td>
                                                 <td>Laki laki</td>
@@ -90,8 +98,8 @@
                                                         </div>
                                                     </div>
                                                 </td>
-
                                             </tr>
+                                        <?php endforeach; ?>
                                         </tbody>
 
                                     </table>

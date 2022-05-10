@@ -20,7 +20,7 @@ class Register extends CI_Controller {
         $password = $this->input->post("password");
         $email = $this->input->post("email");
         $re_password = $this->input->post("re_password");
-        $id_user_level = 3;
+        $id_user_level = 1;
         $id = md5($username.$email.$password);
 
         if($password == $re_password)
