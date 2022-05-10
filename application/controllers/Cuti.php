@@ -10,7 +10,7 @@ class Cuti extends CI_Controller {
     
 	public function view_admin()
 	{
-		$this->load->view('admin/dashboard');
+		$this->load->view('admin/cuti');
 	}
 	
 	public function view_pegawai()
