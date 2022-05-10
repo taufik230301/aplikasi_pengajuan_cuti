@@ -10,20 +10,93 @@
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="<?= base_url();?>assets/login/vendor/bootstrap/css/bootstrap.min.css">
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="<?= base_url();?>assets/login/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="<?= base_url();?>assets/login/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="<?= base_url();?>assets/login/vendor/animate/animate.css">
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="<?= base_url();?>assets/login/vendor/css-hamburgers/hamburgers.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="<?= base_url();?>assets/login/vendor/css-hamburgers/hamburgers.min.css">
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="<?= base_url();?>assets/login/vendor/select2/select2.min.css">
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="<?= base_url();?>assets/login/css/util.css">
     <link rel="stylesheet" type="text/css" href="<?= base_url();?>assets/login/css/main.css">
     <!--===============================================================================================-->
+    <!-- Sweetalert -->
+    <script src="<?= base_url() ?>node_modules/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 
 <body>
+
+    <?php if($this->session->flashdata('success_log_out')){?>
+    <script>
+    swal({
+        title: "Success!",
+        text: "Anda Berhasil Log Out!",
+        icon: "success"
+    });
+    </script>
+    <?php } ?>
+
+    <?php if ($this->session->flashdata('input')){ ?>
+    <script>
+    swal({
+        title: "Berhasil Terdaftar!",
+        text: "Silahkan Anda Login!",
+        icon: "success"
+    });
+    </script>
+    <?php } ?>
+    <?php if ($this->session->flashdata('eror')){ ?>
+    <script>
+    swal({
+        title: "Eror!",
+        text: "Terjadi Kesalahan Dalam Proses data!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
+
+    <?php if($this->session->flashdata('loggin_err_no_user')){?>
+    <script>
+    swal({
+        title: "Error!",
+        text: "Anda Belum Terdaftar!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
+
+    <?php if($this->session->flashdata('loggin_err_pass')){?>
+    <script>
+    swal({
+        title: "Error!",
+        text: "Password Yang Anda Masukan Salah!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
+
+    <?php if($this->session->flashdata('loggin_err_no_access')){?>
+    <script>
+    swal({
+        title: "Error!",
+        text: "Anda Belum Memiliki Akses!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
+
+    <?php if($this->session->flashdata('loggin_err')){?>
+    <script>
+    swal({
+        title: "Error!",
+        text: "Sesi Anda Habis!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
 
     <div class="limiter">
         <div class="container-login100">

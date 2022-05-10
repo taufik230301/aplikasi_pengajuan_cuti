@@ -13,9 +13,22 @@
 
     <!-- Main css -->
     <link rel="stylesheet" href="<?=base_url();?>assets/register/css/style.css">
+    
+    <!-- Sweetalert -->
+    <script src="<?= base_url() ?>node_modules/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 
 <body>
+
+    <?php if ($this->session->flashdata('password_err')){ ?>
+    <script>
+    swal({
+        title: "Error Password!",
+        text: "Ketik Ulang Password!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
 
     <div class="main">
 
@@ -26,7 +39,8 @@
                     <form method="POST" id="signup-form" class="signup-form" action="<?= base_url();?>Register/proses">
                         <h2 class="form-title">Buat Akun</h2>
                         <div class="form-group">
-                            <input type="text" class="form-input" name="username" id="username" placeholder="Your Username" />
+                            <input type="text" class="form-input" name="username" id="username"
+                                placeholder="Your Username" />
                         </div>
                         <div class="form-group">
                             <input type="email" class="form-input" name="email" id="email" placeholder="Your Email" />
