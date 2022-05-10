@@ -86,14 +86,13 @@
                                                     </div>
                                                     <div class="table-responsive">
                                                         <div class="table table-striped table-hover ">
-                                                            <a href="" data-toggle="modal"
-                                                                data-target="#hapus"
+                                                            <a href="" data-toggle="modal" data-target="#hapus"
                                                                 class="btn btn-danger"><i class="fas fa-times"></i>
                                                             </a>
                                                         </div>
                                                     </div>
                                                 </td>
-                                
+
                                             </tr>
                                         </tbody>
 
@@ -105,7 +104,7 @@
                         </div>
                         <!-- /.col -->
                     </div>
-                    
+
                 </div><!-- /.container-fluid -->
             </section>
             <!-- /.content -->

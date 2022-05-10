@@ -15,7 +15,7 @@ class Cuti extends CI_Controller {
 	
 	public function view_pegawai()
 	{
-		$this->load->view('pegawai/dashboard');
+		$this->load->view('pegawai/cuti');
     }
     
 }
