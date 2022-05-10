@@ -5,12 +5,12 @@ class Pegawai extends CI_Controller {
 
     public function view_super_admin()
 	{
-		$this->load->view('super_admin/dashboard');
+		$this->load->view('super_admin/pegawai');
     }
     
 	public function view_admin()
 	{
-		$this->load->view('admin/dashboard');
+		$this->load->view('admin/pegawai');
 	}
 	
     

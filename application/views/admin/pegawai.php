@@ -44,8 +44,66 @@
             <!-- Main content -->
             <section class="content">
                 <div class="container-fluid">
-                    
 
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">Data User UMKM</h3>
+                                </div>
+                                <!-- /.card-header -->
+                                <div class="card-body">
+                                    <table id="example1" class="table table-bordered table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Username</th>
+                                                <th>Nama Lengkap</th>
+                                                <th>Jenis Kelamin</th>
+                                                <th>No Telp</th>
+                                                <th>Alamat</th>
+                                                <th>Aksi</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Tufik</td>
+                                                <td>Taufiiqul Hakim</td>
+                                                <td>Laki laki</td>
+                                                <td>0817281276172</td>
+                                                <td>Jl Sekip</td>
+                                                <td>
+                                                    <div class="table-responsive">
+                                                        <div class="table table-striped table-hover ">
+                                                            <a href="" class="btn btn-primary" data-toggle="modal"
+                                                                data-target="#edit_data_pegawai">
+                                                                <i class="fas fa-edit"></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="table-responsive">
+                                                        <div class="table table-striped table-hover ">
+                                                            <a href="" data-toggle="modal"
+                                                                data-target="#hapus"
+                                                                class="btn btn-danger"><i class="fas fa-trash"></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                
+                                            </tr>
+                                        </tbody>
+
+                                    </table>
+                                </div>
+                                <!-- /.card-body -->
+                            </div>
+                            <!-- /.card -->
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                    <!-- /.row -->
                 </div><!-- /.container-fluid -->
             </section>
             <!-- /.content -->
