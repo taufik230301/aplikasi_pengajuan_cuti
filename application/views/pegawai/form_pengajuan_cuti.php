@@ -45,10 +45,10 @@
             <section class="content">
                 <div class="container-fluid">
 
-                    <form>
+                    <form action="<?= base_url();?>Form_Cuti/proses_cuti" method="POST" enctype="multipart/form-data">
                         <div class="form-group">
-                            <label for="alsan">Alasan</label>
-                            <textarea class="form-control" id="alsan" rows="3" name="alsan"></textarea>
+                            <label for="alasan">Alasan</label>
+                            <textarea class="form-control" id="alasan" rows="3" name="alasan"></textarea>
                         </div>
                         <div class="form-group">
                             <label for="mulai">Mulai Cuti</label>

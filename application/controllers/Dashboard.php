@@ -20,12 +20,30 @@ class Dashboard extends CI_Controller {
 
 	public function dashboard_admin()
 	{
-		$this->load->view('admin/dashboard');
+		if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 2) {
+
+			$this->load->view('admin/dashboard');
+
+		}else{
+
+			$this->session->set_flashdata('loggin_err','loggin_err');
+			redirect('Login/index');
+	
+		}
 	}
 	
 	public function dashboard_pegawai()
 	{
-		$this->load->view('pegawai/dashboard');
+		if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 1) {
+
+			$this->load->view('pegawai/dashboard');
+
+		}else{
+
+			$this->session->set_flashdata('loggin_err','loggin_err');
+			redirect('Login/index');
+
+		}
     }
     
 }
