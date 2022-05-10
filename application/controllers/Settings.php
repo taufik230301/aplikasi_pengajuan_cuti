@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Pegawai extends CI_Controller {
+class Settings extends CI_Controller {
 
     public function view_super_admin()
 	{
@@ -13,5 +13,9 @@ class Pegawai extends CI_Controller {
 		$this->load->view('admin/dashboard');
 	}
 	
+	public function view_pegawai()
+	{
+		$this->load->view('pegawai/dashboard');
+    }
     
 }
