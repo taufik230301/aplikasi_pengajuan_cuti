@@ -67,39 +67,45 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        <?php
+                                            <?php
                                             $id = 0;
                                             foreach($pegawai as $i)
                                             :
                                             $id++;
+                                            $id_user = $i['id_user'];
+                                            $username = $i['username'];
+                                            $nama_lengkap = $i['nama_lengkap'];
+                                            $jenis_kelamin = $i['jenis_kelamin'];
+                                            $no_telp = $i['no_telp'];
+                                            $alamat = $i['alamat'];
 
                                             ?>
                                             <tr>
-                                                <td><?=$id?></td>
-                                                <td>Tufik</td>
-                                                <td>Taufiiqul Hakim</td>
-                                                <td>Laki laki</td>
-                                                <td>0817281276172</td>
-                                                <td>Jl Sekip</td>
+                                                <td><?= $id ?></td>
+                                                <td><?= $username ?></td>
+                                                <td><?= $nama_lengkap ?></td>
+                                                <td><?= $jenis_kelamin ?></td>
+                                                <td><?= $no_telp ?></td>
+                                                <td><?= $alamat ?></td>
                                                 <td>
                                                     <div class="table-responsive">
                                                         <div class="table table-striped table-hover ">
                                                             <a href="" class="btn btn-primary" data-toggle="modal"
-                                                                data-target="#edit_data_pegawai">
+                                                                data-target="#edit_data_pegawai<?=$id_user?>">
                                                                 <i class="fas fa-edit"></i>
                                                             </a>
                                                         </div>
                                                     </div>
                                                     <div class="table-responsive">
                                                         <div class="table table-striped table-hover ">
-                                                            <a href="" data-toggle="modal" data-target="#hapus"
+                                                            <a href="" data-toggle="modal" data-target="#hapus<?=$id_user?>"
                                                                 class="btn btn-danger"><i class="fas fa-trash"></i>
                                                             </a>
                                                         </div>
                                                     </div>
                                                 </td>
                                             </tr>
-                                        <?php endforeach; ?>
+                                            <?php endforeach; ?>
                                         </tbody>
 
                                     </table>
