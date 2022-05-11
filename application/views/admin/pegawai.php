@@ -71,6 +71,7 @@
                                             foreach($pegawai as $i)
                                             :
                                             $id++;
+                                            $id_user = $i['id_user'];
                                             $username = $i['username'];
                                             $nama_lengkap = $i['nama_lengkap'];
                                             $jenis_kelamin = $i['jenis_kelamin'];

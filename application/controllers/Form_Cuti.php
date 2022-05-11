@@ -8,6 +8,7 @@ class Form_Cuti extends CI_Controller {
 		parent::__construct();
         $this->load->model('m_cuti');
 	}
+	
 	public function view_pegawai()
 	{
 		if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 1) {
