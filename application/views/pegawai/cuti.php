@@ -6,6 +6,27 @@
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
+
+    <?php if ($this->session->flashdata('hapus')){ ?>
+    <script>
+    swal({
+        title: "Success!",
+        text: "Data Berhasil Dihapus!",
+        icon: "success"
+    });
+    </script>
+    <?php } ?>
+
+    <?php if ($this->session->flashdata('eror_hapus')){ ?>
+    <script>
+    swal({
+        title: "Erorr!",
+        text: "Data Gagal Dihapus !",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
+
     <div class="wrapper">
 
         <!-- Preloader -->
@@ -73,6 +94,7 @@
                                         foreach($cuti as $i)
                                         :
                                         $id++;
+                                        $id_cuti = $i['id_cuti'];
                                         $id_user = $i['id_user'];
                                         $nama_lengkap = $i['nama_lengkap'];
                                         $alasan = $i['alasan'];
@@ -121,22 +143,54 @@
                                                 <td>
                                                     <div class="table-responsive">
                                                         <div class="table table-striped table-hover ">
-                                                            <a href="" class="btn btn-primary" data-toggle="modal"
-                                                                data-target="#edit_data_pegawai">
-                                                                <i class="fas fa-check"></i>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="table-responsive">
-                                                        <div class="table table-striped table-hover ">
-                                                            <a href="" data-toggle="modal" data-target="#hapus"
-                                                                class="btn btn-danger"><i class="fas fa-times"></i>
+                                                            <a href="" data-toggle="modal"
+                                                                data-target="#hapus<?= $id_cuti ?>"
+                                                                class="btn btn-danger"><i class="fas fa-trash"></i>
                                                             </a>
                                                         </div>
                                                     </div>
                                                 </td>
 
                                             </tr>
+                                            <!-- Modal Hapus Data Cuti -->
+                                            <div class="modal fade" id="hapus<?= $id_cuti ?>" tabindex="-1"
+                                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel">Hapus Data
+                                                                Cuti
+                                                            </h5>
+                                                            <button type="button" class="close" data-dismiss="modal"
+                                                                aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <form action="<?php echo base_url()?>Cuti/hapus_cuti"
+                                                                method="post" enctype="multipart/form-data">
+                                                                <div class="row">
+                                                                    <div class="col-md-12">
+                                                                        <input type="hidden" name="id_cuti"
+                                                                            value="<?php echo $id_cuti?>" />
+                                                                            <input type="hidden" name="id_user"
+                                                                            value="<?php echo $id_user?>" />
+
+                                                                        <p>Apakah kamu yakin ingin menghapus data
+                                                                            ini?</i></b></p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-danger ripple"
+                                                                        data-dismiss="modal">Tidak</button>
+                                                                    <button type="submit"
+                                                                        class="btn btn-success ripple save-category">Ya</button>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                             <?php endforeach;?>
                                         </tbody>
 
@@ -152,6 +206,8 @@
                 </div><!-- /.container-fluid -->
             </section>
             <!-- /.content -->
+            <!-- Modal -->
+
         </div>
         <!-- /.content-wrapper -->
 

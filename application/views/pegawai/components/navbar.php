@@ -4,7 +4,7 @@
         <li class="nav-item">
             <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
         </li>
-       
+
     </ul>
 
     <!-- Right navbar links -->
@@ -15,6 +15,8 @@
                 <i class="far fa-user"></i>
             </a>
             <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                <a type="button" href="#" class="dropdown-item dropdown-footer" data-toggle="modal"
+                    data-target="#exampleModal">Lengkapi Data</a>
                 <a href="<?= base_url();?>Login/log_out" class="dropdown-item dropdown-footer">Logout</a>
             </div>
         </li>
@@ -30,3 +32,37 @@
         </li>
     </ul>
 </nav>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Settings Akun</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="<?= base_url();?>Settings/lengkapi_data" method="POST">
+                    <input type="text" value="<?=$this->session->userdata('id_user');?>" name="id" hidden>
+                    <div class="form-group">
+                        <label for="nama_lengkap">Nama Lengkap</label>
+                        <input type="text" class="form-control" id="nama_lengkap" name="nama_lengkap"
+                            aria-describedby="nama_lengkap">
+                    </div>
+                    <div class="form-group">
+                        <label for="no_telp">No HP</label>
+                        <input type="text" class="form-control" id="no_telp" name="no_telp" aria-describedby="no_telp">
+                    </div>
+                    <div class="form-group">
+                        <label for="no_telp">Alamat</label>
+                        <textarea class="form-control" id="alamat" rows="3" name="alamat"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

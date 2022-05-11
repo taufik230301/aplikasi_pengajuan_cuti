@@ -33,6 +33,20 @@ class M_user extends CI_Model
             return false;
     }
 
+    public function insert_user_detail($id, $nama_lengkap, $no_telp, $alamat)
+    {
+       $this->db->trans_start();
+
+       
+       $this->db->query("UPDATE user_detail SET nama_lengkap='$nama_lengkap', no_telp='$no_telp', alamat='$alamat' WHERE id_user_detail='$id'");
+
+       $this->db->trans_complete();
+        if($this->db->trans_status()==true)
+            return true;
+        else
+            return false;
+    }
+
 
 
 }

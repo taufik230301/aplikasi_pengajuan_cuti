@@ -2,15 +2,35 @@
 <html lang="en">
 
 <head>
-<?php $this->load->view("pegawai/components/header.php") ?>
+    <?php $this->load->view("pegawai/components/header.php") ?>
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
+    <?php if ($this->session->flashdata('input')){ ?>
+    <script>
+    swal({
+        title: "Success!",
+        text: "Data Berhasil Ditambahkan!",
+        icon: "success"
+    });
+    </script>
+    <?php } ?>
+
+    <?php if ($this->session->flashdata('eror')){ ?>
+    <script>
+    swal({
+        title: "Erorr!",
+        text: "Data Gagal Ditambahkan!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
     <div class="wrapper">
 
         <!-- Preloader -->
         <div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__shake" src="<?= base_url();?>assets/admin_lte/dist/img/Loading.png" alt="AdminLTELogo" height="60" width="60">
+            <img class="animation__shake" src="<?= base_url();?>assets/admin_lte/dist/img/Loading.png"
+                alt="AdminLTELogo" height="60" width="60">
         </div>
 
         <!-- Navbar -->
@@ -93,7 +113,7 @@
                             </div>
                         </div>
                     </div>
-                   
+
                 </div><!-- /.container-fluid -->
             </section>
             <!-- /.content -->

@@ -6,6 +6,25 @@
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
+    <?php if ($this->session->flashdata('input')){ ?>
+    <script>
+    swal({
+        title: "Success!",
+        text: "Data Berhasil Dilengkapi!",
+        icon: "success"
+    });
+    </script>
+    <?php } ?>
+
+    <?php if ($this->session->flashdata('eror')){ ?>
+    <script>
+    swal({
+        title: "Erorr!",
+        text: "Data Gagal Ditambahkan!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
     <div class="wrapper">
 
         <!-- Preloader -->
@@ -48,18 +67,15 @@
                     <form>
                         <div class="form-group">
                             <label for="username">Username</label>
-                            <input type="text" class="form-control" id="username"
-                                aria-describedby="Username">
+                            <input type="text" class="form-control" id="username" aria-describedby="Username">
                         </div>
                         <div class="form-group">
                             <label for="password">Password</label>
-                            <input type="text" class="form-control" id="password"
-                                aria-describedby="password">
+                            <input type="text" class="form-control" id="password" aria-describedby="password">
                         </div>
                         <div class="form-group">
                             <label for="re_password">Ulangi Password</label>
-                            <input type="text" class="form-control" id="re_password"
-                                aria-describedby="re_password">
+                            <input type="text" class="form-control" id="re_password" aria-describedby="re_password">
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>

@@ -26,6 +26,17 @@ class M_cuti extends CI_Model
             return false;
     }
 
+    public function delete_cuti($id_cuti)
+    {
+        $this->db->trans_start();
+        $this->db->query("DELETE FROM cuti WHERE id_cuti='$id_cuti'");
+        $this->db->trans_complete();
+        if($this->db->trans_status()==true)
+            return true;
+        else
+            return false;
+    }
+
    
 
 
