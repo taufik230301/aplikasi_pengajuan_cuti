@@ -22,9 +22,10 @@ class Cuti extends CI_Controller {
 		$this->load->view('admin/cuti', $data);
 	}
 	
-	public function view_pegawai()
+	public function view_pegawai($id_user)
 	{
-		$this->load->view('pegawai/cuti');
+		$data['cuti'] = $this->m_cuti->get_all_cuti_by_id_user($id_user)->result_array();
+		$this->load->view('pegawai/cuti', $data);
     }
     
 }

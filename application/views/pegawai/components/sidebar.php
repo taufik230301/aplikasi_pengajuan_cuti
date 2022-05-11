@@ -41,7 +41,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="<?= base_url();?>Cuti/view_pegawai" class="nav-link">
+                    <a href="<?= base_url();?>Cuti/view_pegawai/<?=$this->session->userdata('id_user');?>" class="nav-link">
                         <i class="nav-icon fas fa-envelope"></i>
                         <p>Data Cuti</p>
                     </a>

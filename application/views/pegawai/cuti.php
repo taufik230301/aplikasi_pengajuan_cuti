@@ -67,14 +67,57 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            <?php
+
+                                        $id = 0;
+                                        foreach($cuti as $i)
+                                        :
+                                        $id++;
+                                        $id_user = $i['id_user'];
+                                        $nama_lengkap = $i['nama_lengkap'];
+                                        $alasan = $i['alasan'];
+                                        $tgl_diajukan = $i['tgl_diajukan'];
+                                        $mulai = $i['mulai'];
+                                        $berakhir = $i['berakhir'];
+                                        $id_status_cuti = $i['id_status_cuti'];
+
+                                        ?>
                                             <tr>
-                                                <td>1</td>
-                                                <td>Taufiiqul Hakim</td>
-                                                <td>Sakit</td>
-                                                <td>2022-09-9</td>
-                                                <td>2022-09-10</td>
-                                                <td>2022-10-10</td>
-                                                <td>Diterima</td>
+                                                <td><?= $id ?></td>
+                                                <td><?= $nama_lengkap ?></td>
+                                                <td><?= $alasan ?></td>
+                                                <td><?= $tgl_diajukan ?></td>
+                                                <td><?= $mulai ?></td>
+                                                <td><?= $berakhir ?></td>
+                                                <td><?php if($id_status_cuti == 1){ ?>
+                                                    <div class="table-responsive">
+                                                        <div class="table table-striped table-hover ">
+                                                            <a href="" class="btn btn-info" data-toggle="modal"
+                                                                data-target="#edit_data_pegawai">
+                                                                Menunggu Konfirmasi
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <?php }elseif($id_status_cuti == 2) {?>
+                                                    <div class="table-responsive">
+                                                        <div class="table table-striped table-hover ">
+                                                            <a href="" class="btn btn-info" data-toggle="modal"
+                                                                data-target="#edit_data_pegawai">
+                                                                Izin Cuti Diterima
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <?php }elseif($id_status_cuti == 3) {?>
+                                                    <div class="table-responsive">
+                                                        <div class="table table-striped table-hover ">
+                                                            <a href="" class="btn btn-info" data-toggle="modal"
+                                                                data-target="#edit_data_pegawai">
+                                                                Izin Cuti Ditolak
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <?php }?>
+                                                </td>
                                                 <td>
                                                     <div class="table-responsive">
                                                         <div class="table table-striped table-hover ">
@@ -94,6 +137,7 @@
                                                 </td>
 
                                             </tr>
+                                            <?php endforeach;?>
                                         </tbody>
 
                                     </table>
