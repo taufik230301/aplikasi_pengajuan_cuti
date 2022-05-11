@@ -29,7 +29,7 @@ class Login extends CI_Controller {
 				if($user['id_user_level'] == 1){
 
 					$this->session->set_userdata('logged_in', true);
-					$this->session->set_userdata('id', $user['id']);
+					$this->session->set_userdata('id_user', $user['id_user']);
 					$this->session->set_userdata('username', $user['username']);
 					$this->session->set_userdata('id_user_level', $user['id_user_level']);
 					
@@ -38,7 +38,7 @@ class Login extends CI_Controller {
 				}else if($user['id_user_level'] == 2){
 	
 					$this->session->set_userdata('logged_in', true);
-					$this->session->set_userdata('id', $user['id']);
+					$this->session->set_userdata('id_user', $user['id_user']);
 					$this->session->set_userdata('username', $user['username']);
 					$this->session->set_userdata('id_user_level', $user['id_user_level']);
 	
@@ -47,7 +47,7 @@ class Login extends CI_Controller {
 				}else if($user['id_user_level'] == 3){
 	
 					$this->session->set_userdata('logged_in', true);
-					$this->session->set_userdata('id', $user['id']);
+					$this->session->set_userdata('id_user', $user['id_user']);
 					$this->session->set_userdata('username', $user['username']);
 					$this->session->set_userdata('id_user_level', $user['id_user_level']);
 	
@@ -69,5 +69,12 @@ class Login extends CI_Controller {
 			redirect('Login/index');
 		}
 		
+	}
+
+	public function log_out(){
+		$this->session->unset_userdata('logged_in');
+		$this->session->unset_userdata('id_user');
+        $this->session->set_flashdata('success_log_out','success_log_out');
+            redirect('Login/index');
 	}
 }

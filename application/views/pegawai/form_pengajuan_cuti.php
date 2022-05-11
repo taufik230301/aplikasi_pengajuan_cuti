@@ -46,17 +46,18 @@
                 <div class="container-fluid">
 
                     <form action="<?= base_url();?>Form_Cuti/proses_cuti" method="POST" enctype="multipart/form-data">
+                        <input type="text" value="<?=$this->session->userdata('id_user') ?>" name="id_user" hidden>
                         <div class="form-group">
                             <label for="alasan">Alasan</label>
                             <textarea class="form-control" id="alasan" rows="3" name="alasan"></textarea>
                         </div>
                         <div class="form-group">
                             <label for="mulai">Mulai Cuti</label>
-                            <input type="date" class="form-control" id="mulai" aria-describedby="mulai">
+                            <input type="date" class="form-control" id="mulai" aria-describedby="mulai" name="mulai">
                         </div>
                         <div class="form-group">
                             <label for="berakhir">Berakhir Cuti</label>
-                            <input type="date" class="form-control" id="berakhir" aria-describedby="berakhir">
+                            <input type="date" class="form-control" id="berakhir" aria-describedby="berakhir" name="berakhir">
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
