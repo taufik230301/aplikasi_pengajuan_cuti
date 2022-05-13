@@ -52,8 +52,8 @@
                             aria-describedby="nama_lengkap">
                     </div>
                     <div class="form-group">
-                        <label for="nama_lengkap">Jenis Kelamin</label>
-                        <select class="form-control" id="jenis_kelamin" name="jenis_kelamin">
+                        <label for="id_jenis_kelamin">Jenis Kelamin</label>
+                        <select class="form-control" id="id_jenis_kelamin" name="id_jenis_kelamin">
                             <?php foreach($jenis_kelamin as $u)
                                                                 :
                                                                 $id = $u["id_jenis_kelamin"];

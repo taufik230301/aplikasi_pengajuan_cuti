@@ -68,6 +68,49 @@ class Pegawai extends CI_Controller {
 
      
 	}
+
+	public function edit_pegawai()
+	{
+		$username = $this->input->post("username");
+        $password = $this->input->post("password");
+		$email = $this->input->post("email");
+		$nama_lengkap = $this->input->post("nama_lengkap");
+		$id_jenis_kelamin = $this->input->post("id_jenis_kelamin");
+		$no_telp = $this->input->post("no_telp");
+		$alamat = $this->input->post("alamat");
+		$id_user_level = 1;
+        $id = $this->input->post("id_user");
+
+        
+            $hasil = $this->m_user->update_pegawai($id, $username, $email, $password, $id_user_level, $nama_lengkap, $id_jenis_kelamin, $no_telp, $alamat);
+
+            if($hasil==false){
+                $this->session->set_flashdata('eror_edit','eror_edit');
+                redirect('Pegawai/view_admin');
+			}else{
+				$this->session->set_flashdata('edit','edit');
+				redirect('Pegawai/view_admin');
+            }
+
+     
+	}
+
+	public function hapus_pegawai()
+	{
+		
+        	$id = $this->input->post("id_user");
+
+        
+            $hasil = $this->m_user->delete_pegawai($id);
+
+            if($hasil==false){
+                $this->session->set_flashdata('eror_hapus','eror_hapus');
+                redirect('Pegawai/view_admin');
+			}else{
+				$this->session->set_flashdata('hapus','hapus');
+				redirect('Pegawai/view_admin');
+            }
+	}
 	
     
 }
