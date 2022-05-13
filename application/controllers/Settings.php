@@ -6,7 +6,8 @@ class Settings extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-        $this->load->model('m_user');
+		$this->load->model('m_user');
+		$this->load->model('m_jenis_kelamin');
 	}
 
     public function view_super_admin()
@@ -21,8 +22,8 @@ class Settings extends CI_Controller {
 	
 	public function view_pegawai()
 	{
-		
 		$data['pegawai'] = $this->m_user->get_pegawai_by_id($this->session->userdata('id_user'))->row_array();
+		$data['jenis_kelamin'] = $this->m_jenis_kelamin->get_all_jenis_kelamin()->result_array();
 		$this->load->view('pegawai/settings', $data);
 	}
 	

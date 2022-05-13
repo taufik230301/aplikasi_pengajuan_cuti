@@ -52,6 +52,19 @@
                             aria-describedby="nama_lengkap">
                     </div>
                     <div class="form-group">
+                        <label for="nama_lengkap">Jenis Kelamin</label>
+                        <select class="form-control" id="jenis_kelamin" name="jenis_kelamin">
+                            <?php foreach($jenis_kelamin as $u)
+                                                                :
+                                                                $id = $u["id_jenis_kelamin"];
+                                                                $jenis_kelamin = $u["jenis_kelamin"];
+                                                                ?>
+                            <option value="<?= $id ?>"><?= $jenis_kelamin ?></option>
+
+                            <?php endforeach?>
+                        </select>
+                    </div>
+                    <div class="form-group">
                         <label for="no_telp">No HP</label>
                         <input type="text" class="form-control" id="no_telp" name="no_telp" aria-describedby="no_telp">
                     </div>
