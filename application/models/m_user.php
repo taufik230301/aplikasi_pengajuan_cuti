@@ -11,6 +11,13 @@ class M_user extends CI_Model
         return $hasil;
     }
 
+    public function get_pegawai_by_id($id_user)
+    {
+        $hasil = $this->db->query("SELECT * FROM user JOIN user_detail ON user.id_user_detail = user_detail.id_user_detail 
+        WHERE user.id_user='$id_user'");
+        return $hasil;
+    }
+
     public function cek_login($username)
     {
         

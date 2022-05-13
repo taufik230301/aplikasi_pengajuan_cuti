@@ -21,7 +21,9 @@ class Settings extends CI_Controller {
 	
 	public function view_pegawai()
 	{
-		$this->load->view('pegawai/settings');
+		
+		$data['pegawai'] = $this->m_user->get_pegawai_by_id($this->session->userdata('id_user'))->row_array();
+		$this->load->view('pegawai/settings', $data);
 	}
 	
 	public function lengkapi_data()

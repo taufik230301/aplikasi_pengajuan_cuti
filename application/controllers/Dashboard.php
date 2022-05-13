@@ -3,6 +3,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Dashboard extends CI_Controller {
 
+	public function __construct()
+	{
+		parent::__construct();
+        $this->load->model('m_user');
+	}
+
 	public function dashboard_super_admin()
 	{
 	if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 3) {
@@ -36,7 +42,8 @@ class Dashboard extends CI_Controller {
 	{
 		if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 1) {
 
-			$this->load->view('pegawai/dashboard');
+			$data['pegawai'] = $this->m_user->get_pegawai_by_id($this->session->userdata('id_user'))->row_array();
+			$this->load->view('pegawai/dashboard', $data);
 
 		}else{
 

@@ -166,6 +166,7 @@
                                                                 <span aria-hidden="true">&times;</span>
                                                             </button>
                                                         </div>
+
                                                         <div class="modal-body">
                                                             <form action="<?php echo base_url()?>Cuti/hapus_cuti"
                                                                 method="post" enctype="multipart/form-data">
@@ -173,7 +174,7 @@
                                                                     <div class="col-md-12">
                                                                         <input type="hidden" name="id_cuti"
                                                                             value="<?php echo $id_cuti?>" />
-                                                                            <input type="hidden" name="id_user"
+                                                                        <input type="hidden" name="id_user"
                                                                             value="<?php echo $id_user?>" />
 
                                                                         <p>Apakah kamu yakin ingin menghapus data

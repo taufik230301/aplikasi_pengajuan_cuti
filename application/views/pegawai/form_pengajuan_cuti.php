@@ -6,6 +6,27 @@
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
+
+    <?php if ($this->session->flashdata('input')){ ?>
+    <script>
+    swal({
+        title: "Success!",
+        text: "Data Berhasil Ditambahkan!",
+        icon: "success"
+    });
+    </script>
+    <?php } ?>
+
+    <?php if ($this->session->flashdata('eror_input')){ ?>
+    <script>
+    swal({
+        title: "Erorr!",
+        text: "Data Gagal Ditambahkan!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
+
     <div class="wrapper">
 
         <!-- Preloader -->
@@ -49,15 +70,16 @@
                         <input type="text" value="<?=$this->session->userdata('id_user') ?>" name="id_user" hidden>
                         <div class="form-group">
                             <label for="alasan">Alasan</label>
-                            <textarea class="form-control" id="alasan" rows="3" name="alasan"></textarea>
+                            <textarea class="form-control" id="alasan" rows="3" name="alasan" required></textarea>
                         </div>
                         <div class="form-group">
                             <label for="mulai">Mulai Cuti</label>
-                            <input type="date" class="form-control" id="mulai" aria-describedby="mulai" name="mulai">
+                            <input type="date" class="form-control" id="mulai" aria-describedby="mulai" name="mulai" required>
                         </div>
                         <div class="form-group">
                             <label for="berakhir">Berakhir Cuti</label>
-                            <input type="date" class="form-control" id="berakhir" aria-describedby="berakhir" name="berakhir">
+                            <input type="date" class="form-control" id="berakhir" aria-describedby="berakhir"
+                                name="berakhir" required>
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>

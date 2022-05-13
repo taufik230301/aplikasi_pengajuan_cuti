@@ -6,14 +6,16 @@ class Form_Cuti extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-        $this->load->model('m_cuti');
+		$this->load->model('m_cuti');
+		$this->load->model('m_user');
 	}
 	
 	public function view_pegawai()
 	{
 		if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 1) {
 
-			$this->load->view('pegawai/form_pengajuan_cuti');
+			$data['pegawai'] = $this->m_user->get_pegawai_by_id($this->session->userdata('id_user'))->row_array();
+			$this->load->view('pegawai/form_pengajuan_cuti', $data);
 
 		}else{
 

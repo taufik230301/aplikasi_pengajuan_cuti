@@ -37,6 +37,17 @@ class M_cuti extends CI_Model
             return false;
     }
 
+    public function confirm_cuti($id_cuti, $id_status_cuti)
+    {
+        $this->db->trans_start();
+        $this->db->query("UPDATE cuti SET id_status_cuti='$id_status_cuti' WHERE id_cuti='$id_cuti'");
+        $this->db->trans_complete();
+        if($this->db->trans_status()==true)
+            return true;
+        else
+            return false;
+    }
+
    
 
 

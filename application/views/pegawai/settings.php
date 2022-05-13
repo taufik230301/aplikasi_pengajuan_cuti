@@ -67,15 +67,15 @@
                     <form>
                         <div class="form-group">
                             <label for="username">Username</label>
-                            <input type="text" class="form-control" id="username" aria-describedby="Username">
+                            <input type="text" class="form-control" id="username" aria-describedby="Username" required>
                         </div>
                         <div class="form-group">
                             <label for="password">Password</label>
-                            <input type="text" class="form-control" id="password" aria-describedby="password">
+                            <input type="text" class="form-control" id="password" aria-describedby="password" required>
                         </div>
                         <div class="form-group">
                             <label for="re_password">Ulangi Password</label>
-                            <input type="text" class="form-control" id="re_password" aria-describedby="re_password">
+                            <input type="text" class="form-control" id="re_password" aria-describedby="re_password" required>
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
