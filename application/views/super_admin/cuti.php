@@ -82,6 +82,7 @@
                                                 <th>Mulai</th>
                                                 <th>Berakhir</th>
                                                 <th>Status Cuti</th>
+                                                <th>Cetak Surat</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
@@ -138,6 +139,16 @@
                                                     </div>
                                                     <?php }?>
                                                 </td>
+                                                <td><?php if($id_status_cuti == 2) { ?>
+                                                    <a href="<?=base_url();?>" class="btn btn-info">
+                                                        Cetak Surat
+                                                    </a>
+                                                    <?php } else {?>
+                                                    <a href="#" class="btn btn-danger">
+                                                        Belum Dapat Mencetak
+                                                    </a>
+                                                    <?php } ?>
+                                                </td>
                                                 <td>
                                                     <div class="table-responsive">
                                                         <div class="table table-striped table-hover ">
@@ -175,7 +186,8 @@
                                                         </div>
 
                                                         <div class="modal-body">
-                                                            <form action="<?php echo base_url()?>Cuti/acc_cuti_super_admin/2"
+                                                            <form
+                                                                action="<?php echo base_url()?>Cuti/acc_cuti_super_admin/2"
                                                                 method="post" enctype="multipart/form-data">
                                                                 <div class="row">
                                                                     <div class="col-md-12">
@@ -216,7 +228,8 @@
                                                         </div>
 
                                                         <div class="modal-body">
-                                                            <form action="<?php echo base_url()?>Cuti/acc_cuti_super_admin/3"
+                                                            <form
+                                                                action="<?php echo base_url()?>Cuti/acc_cuti_super_admin/3"
                                                                 method="post" enctype="multipart/form-data">
                                                                 <div class="row">
                                                                     <div class="col-md-12">
