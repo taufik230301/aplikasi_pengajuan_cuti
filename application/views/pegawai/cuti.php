@@ -84,6 +84,7 @@
                                                 <th>Mulai</th>
                                                 <th>Berakhir</th>
                                                 <th>Status Cuti</th>
+                                                <th>Cetak Surat</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
@@ -139,6 +140,16 @@
                                                         </div>
                                                     </div>
                                                     <?php }?>
+                                                </td>
+                                                <td><?php if($id_status_cuti == 2) { ?>
+                                                    <a href="" class="btn btn-info">
+                                                        Cetak Surat
+                                                    </a>
+                                                    <?php } else {?>
+                                                    <a href="" class="btn btn-danger">
+                                                        Belum Dapat Mencetak
+                                                    </a>
+                                                    <?php } ?>
                                                 </td>
                                                 <td>
                                                     <div class="table-responsive">

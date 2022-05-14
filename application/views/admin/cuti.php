@@ -7,7 +7,7 @@
 
 <body class="hold-transition sidebar-mini layout-fixed">
 
-<?php if ($this->session->flashdata('input')){ ?>
+    <?php if ($this->session->flashdata('input')){ ?>
     <script>
     swal({
         title: "Success!",
@@ -85,6 +85,7 @@
                                                 <th>Mulai</th>
                                                 <th>Berakhir</th>
                                                 <th>Status Cuti</th>
+                                                <th>Cetak Surat</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
@@ -112,6 +113,7 @@
                                                 <td><?= $tgl_diajukan ?></td>
                                                 <td><?= $mulai ?></td>
                                                 <td><?= $berakhir ?></td>
+
                                                 <td><?php if($id_status_cuti == 1){ ?>
                                                     <div class="table-responsive">
                                                         <div class="table table-striped table-hover ">
@@ -141,6 +143,16 @@
                                                     </div>
                                                     <?php }?>
                                                 </td>
+                                                <td><?php if($id_status_cuti == 2) { ?>
+                                                    <a href="<?=base_url();?>" class="btn btn-info">
+                                                        Cetak Surat
+                                                    </a>
+                                                    <?php } else {?>
+                                                    <a href="#" class="btn btn-danger">
+                                                        Belum Dapat Mencetak
+                                                    </a>
+                                                    <?php } ?>
+                                                </td>
                                                 <td>
                                                     <div class="table-responsive">
                                                         <div class="table table-striped table-hover ">
@@ -159,6 +171,7 @@
                                                         </div>
                                                     </div>
                                                 </td>
+
 
                                             </tr>
                                             <!-- Modal Setuju Cuti -->
