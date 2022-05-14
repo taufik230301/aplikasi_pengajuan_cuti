@@ -11,6 +11,13 @@ class M_user extends CI_Model
         return $hasil;
     }
 
+    public function get_all_admin()
+    {
+        $hasil = $this->db->query('SELECT * FROM user
+        WHERE id_user_level = 2');
+        return $hasil;
+    }
+
     public function get_pegawai_by_id($id_user)
     {
         $hasil = $this->db->query("SELECT * FROM user JOIN user_detail ON user.id_user_detail = user_detail.id_user_detail 
@@ -81,7 +88,35 @@ class M_user extends CI_Model
         else
             return false;
     }
+
     public function delete_pegawai($id)
+    {
+       $this->db->trans_start();
+
+       $this->db->query("DELETE FROM user WHERE id_user='$id'");
+       $this->db->query("DELETE FROM user_detail WHERE id_user_detail='$id'");
+
+       $this->db->trans_complete();
+        if($this->db->trans_status()==true)
+            return true;
+        else
+            return false;
+    }
+
+    public function update_user($id, $username, $email, $password, $id_user_level)
+    {
+       $this->db->trans_start();
+
+       $this->db->query("UPDATE user SET username='$username', password='$password', email='$email', id_user_level='$id_user_level' WHERE id_user='$id'");
+      
+       $this->db->trans_complete();
+        if($this->db->trans_status()==true)
+            return true;
+        else
+            return false;
+    }
+
+    public function delete_admin($id)
     {
        $this->db->trans_start();
 
