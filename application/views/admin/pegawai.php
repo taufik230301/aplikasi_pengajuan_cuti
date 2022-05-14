@@ -65,7 +65,7 @@
     });
     </script>
     <?php } ?>
-    
+
     <div class="wrapper">
 
         <!-- Preloader -->
