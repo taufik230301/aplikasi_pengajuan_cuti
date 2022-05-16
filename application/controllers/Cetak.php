@@ -3,14 +3,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Cetak extends CI_Controller {
 
-    public function laporan_pdf(){
+    public function __construct()
+    {
+        parent::__construct();
+		$this->load->model('m_cuti');
+    }
+    public function surat_cuti_pdf($id_user){
 
-        $data = array(
-            "dataku" => array(
-                "nama" => "Petani Kode",
-                "url" => "http://petanikode.com"
-            )
-        );
+        $data['cuti'] = $this->m_cuti->get_all_cuti_by_id_user($id_user)->result_array();
     
         $this->load->library('pdf');
     
