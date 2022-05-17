@@ -34,10 +34,13 @@ class Settings extends CI_Controller {
 		$no_telp = $this->input->post("no_telp");
 		$alamat = $this->input->post("alamat");
 		$id_jenis_kelamin = $this->input->post("id_jenis_kelamin");
+		$nip = $this->input->post("nip");
+		$pangkat = $this->input->post("pangkat");
+		$jabatan = $this->input->post("jabatan");
 
 		
 
-		$hasil = $this->m_user->update_user_detail($id, $nama_lengkap, $no_telp, $alamat, $id_jenis_kelamin);
+		$hasil = $this->m_user->update_user_detail($id, $nama_lengkap, $no_telp, $alamat, $id_jenis_kelamin, $nip, $pangkat, $jabatan);
 
         if($hasil==false){
             $this->session->set_flashdata('eror','eror');

@@ -15,7 +15,7 @@ class Cetak extends CI_Controller {
         $this->load->library('pdf');
     
         $this->pdf->setPaper('A4', 'potrait');
-        $this->pdf->filename = "laporan-petanikode.pdf";
+        $this->pdf->filename = "surat-cuti.pdf";
         $this->pdf->load_view('laporan_pdf', $data);
     
     

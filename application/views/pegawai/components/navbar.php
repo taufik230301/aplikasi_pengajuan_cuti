@@ -69,6 +69,18 @@
                         <input type="text" class="form-control" id="no_telp" name="no_telp" aria-describedby="no_telp">
                     </div>
                     <div class="form-group">
+                        <label for="nip">NIP</label>
+                        <input type="text" class="form-control" id="nip" name="nip" aria-describedby="nip">
+                    </div>
+                    <div class="form-group">
+                        <label for="pangkat">Pangkat</label>
+                        <input type="text" class="form-control" id="pangkat" name="pangkat" aria-describedby="pangkat">
+                    </div>
+                    <div class="form-group">
+                        <label for="jabatan">Jabatan</label>
+                        <input type="text" class="form-control" id="jabatan" name="jabatan" aria-describedby="jabatan">
+                    </div>
+                    <div class="form-group">
                         <label for="no_telp">Alamat</label>
                         <textarea class="form-control" id="alamat" rows="3" name="alamat"></textarea>
                     </div>

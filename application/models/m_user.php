@@ -47,12 +47,12 @@ class M_user extends CI_Model
             return false;
     }
 
-    public function update_user_detail($id, $nama_lengkap, $id_jenis_kelamin, $no_telp, $alamat)
+    public function update_user_detail($id, $nama_lengkap, $id_jenis_kelamin, $no_telp, $alamat, $nip, $pangkat, $jabatan)
     {
        $this->db->trans_start();
 
        
-       $this->db->query("UPDATE user_detail SET nama_lengkap='$nama_lengkap', id_jenis_kelamin='$id_jenis_kelamin' ,no_telp='$no_telp', alamat='$alamat' WHERE id_user_detail='$id'");
+       $this->db->query("UPDATE user_detail SET nama_lengkap='$nama_lengkap', id_jenis_kelamin='$id_jenis_kelamin' ,no_telp='$no_telp', alamat='$alamat', nip='$nip', pangkat='$pangkat', jabatan='$jabatan' WHERE id_user_detail='$id'");
 
        $this->db->trans_complete();
         if($this->db->trans_status()==true)
