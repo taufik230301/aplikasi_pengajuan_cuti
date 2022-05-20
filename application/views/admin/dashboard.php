@@ -50,7 +50,7 @@
                             <!-- small box -->
                             <div class="small-box bg-info">
                                 <div class="inner">
-                                    <h3>150</h3>
+                                    <h3><?=$cuti['total_cuti']?></h3>
 
                                     <p>Data Cuti</p>
                                 </div>
@@ -66,7 +66,7 @@
                             <!-- small box -->
                             <div class="small-box bg-success">
                                 <div class="inner">
-                                    <h3>53</h3>
+                                    <h3><?=$cuti_acc['total_cuti']?></h3>
 
                                     <p>Data Cuti Diterima</p>
                                 </div>
@@ -82,7 +82,7 @@
                             <!-- small box -->
                             <div class="small-box bg-warning">
                                 <div class="inner">
-                                    <h3>44</h3>
+                                    <h3><?=$cuti_reject['total_cuti']?></h3>
 
                                     <p>Data Cuti Ditolak</p>
                                 </div>
@@ -98,7 +98,7 @@
                             <!-- small box -->
                             <div class="small-box bg-danger">
                                 <div class="inner">
-                                    <h3>65</h3>
+                                    <h3><?=$pegawai['total_user']?></h3>
 
                                     <p>Pegawai</p>
                                 </div>

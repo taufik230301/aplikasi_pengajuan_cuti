@@ -49,7 +49,29 @@ class M_cuti extends CI_Model
     }
 
    
+    public function count_all_cuti()
+    {
+        $hasil = $this->db->query('SELECT COUNT(id_cuti) as total_cuti FROM cuti JOIN user ON cuti.id_user = user.id_user JOIN user_detail ON user.id_user_detail = user_detail.id_user_detail');
+        return $hasil;
+    }
 
+    public function count_all_cuti_acc()
+    {
+        $hasil = $this->db->query('SELECT COUNT(id_cuti) as total_cuti FROM cuti JOIN user ON cuti.id_user = user.id_user JOIN user_detail ON user.id_user_detail = user_detail.id_user_detail WHERE id_status_cuti=2');
+        return $hasil;
+    }
+
+    public function count_all_cuti_confirm()
+    {
+        $hasil = $this->db->query('SELECT COUNT(id_cuti) as total_cuti FROM cuti JOIN user ON cuti.id_user = user.id_user JOIN user_detail ON user.id_user_detail = user_detail.id_user_detail WHERE id_status_cuti=1');
+        return $hasil;
+    }
+
+    public function count_all_cuti_reject()
+    {
+        $hasil = $this->db->query('SELECT COUNT(id_cuti) as total_cuti FROM cuti JOIN user ON cuti.id_user = user.id_user JOIN user_detail ON user.id_user_detail = user_detail.id_user_detail WHERE id_status_cuti=3');
+        return $hasil;
+    }
 
 
 }

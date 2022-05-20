@@ -8,14 +8,20 @@ class Dashboard extends CI_Controller {
 		parent::__construct();
 		$this->load->model('m_user');
 		$this->load->model('m_jenis_kelamin');
+		$this->load->model('m_cuti');
 	}
 
 	public function dashboard_super_admin()
 	{
 	if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 3) {
 
-		
-		$this->load->view('super_admin/dashboard');
+		$data['cuti'] = $this->m_cuti->count_all_cuti()->row_array();
+		$data['cuti_acc'] = $this->m_cuti->count_all_cuti_acc()->row_array();
+		$data['cuti_confirm'] = $this->m_cuti->count_all_cuti_confirm()->row_array();
+		$data['cuti_reject'] = $this->m_cuti->count_all_cuti_reject()->row_array();
+		$data['pegawai'] = $this->m_user->count_all_pegawai()->row_array();
+		$data['admin'] = $this->m_user->count_all_admin()->row_array();
+		$this->load->view('super_admin/dashboard', $data);
 
 	}else{
 
@@ -28,8 +34,11 @@ class Dashboard extends CI_Controller {
 	public function dashboard_admin()
 	{
 		if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 2) {
-
-			$this->load->view('admin/dashboard');
+			$data['cuti'] = $this->m_cuti->count_all_cuti()->row_array();
+			$data['cuti_acc'] = $this->m_cuti->count_all_cuti_acc()->row_array();
+			$data['cuti_reject'] = $this->m_cuti->count_all_cuti_reject()->row_array();
+			$data['pegawai'] = $this->m_user->count_all_pegawai()->row_array();
+			$this->load->view('admin/dashboard', $data);
 
 		}else{
 

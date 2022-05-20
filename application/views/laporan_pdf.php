@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Surat Cuti</title>
 </head>
 
 <body>
@@ -47,8 +47,10 @@ $id_status_cuti = $i['id_status_cuti'];
             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
             Kepada&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
             &nbsp; &nbsp;</p>
-        <p>Nomor&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: &nbsp;&nbsp;/&nbsp;&nbsp;/Penda/2017&nbsp;
-            &nbsp; &nbsp; &nbsp;
+        <p>Nommor &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; :&nbsp; &nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            &nbsp; &nbsp; &nbsp;&nbsp;
             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
             &nbsp; &nbsp; Yth. Kepala Badan
             Pendapatan Daerah</p>
@@ -56,7 +58,8 @@ $id_status_cuti = $i['id_status_cuti'];
             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Provinsi
             Sumatera Selatan</p>
-        <p>Perihal&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; : Cuti <?=$perihal_cuti?>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        <p>Perihal&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; : Cuti <?=$perihal_cuti?>&nbsp; &nbsp; &nbsp;
+            &nbsp; &nbsp;
             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; di</p>
         <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
@@ -80,7 +83,8 @@ $id_status_cuti = $i['id_status_cuti'];
             Jabatan&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
             &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;: <?=$jabatan?></p>
         <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Dikemukakan kepada Bapak/Ibu pada prinsipnya kami tidak
-            berkeberatan atas usul cuti <?=$perihal_cuti?> pegawai tersebut, mengingat cuti <?=$perihal_cuti?> dimulai terhitung <?= $mulai ?>
+            berkeberatan atas usul cuti <?=$perihal_cuti?> pegawai tersebut, mengingat cuti <?=$perihal_cuti?> dimulai
+            terhitung <?= $mulai ?>
             s.d <?=$berakhir?> yang akan dipergunakan oleh yang berasangkutan untuk <?=$alasan?>.</p>
 
         <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Dengan kami ajukan, namun segala pertimbangan kami serahkan kepada

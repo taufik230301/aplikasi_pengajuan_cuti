@@ -11,6 +11,21 @@ class M_user extends CI_Model
         return $hasil;
     }
 
+    public function count_all_pegawai()
+    {
+        $hasil = $this->db->query('SELECT COUNT(id_user) as total_user FROM user JOIN user_detail ON user.id_user_detail = user_detail.id_user_detail 
+        JOIN jenis_kelamin ON user_detail.id_jenis_kelamin = jenis_kelamin.id_jenis_kelamin 
+        WHERE id_user_level = 1');
+        return $hasil;
+    }
+
+    public function count_all_admin()
+    {
+        $hasil = $this->db->query('SELECT COUNT(id_user) as total_user FROM user
+        WHERE id_user_level = 2');
+        return $hasil;
+    }
+
     public function get_all_admin()
     {
         $hasil = $this->db->query('SELECT * FROM user
