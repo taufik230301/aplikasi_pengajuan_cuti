@@ -7,6 +7,46 @@
 
 <body class="hold-transition sidebar-mini layout-fixed">
 
+    <?php if ($this->session->flashdata('edit')){ ?>
+    <script>
+    swal({
+        title: "Success!",
+        text: "Data Berhasil Diedit!",
+        icon: "success"
+    });
+    </script>
+    <?php } ?>
+
+    <?php if ($this->session->flashdata('eror_edit')){ ?>
+    <script>
+    swal({
+        title: "Erorr!",
+        text: "Data Gagal Diedit !",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
+
+    <?php if ($this->session->flashdata('hapus')){ ?>
+    <script>
+    swal({
+        title: "Success!",
+        text: "Data Berhasil Dihapus!",
+        icon: "success"
+    });
+    </script>
+    <?php } ?>
+
+    <?php if ($this->session->flashdata('eror_hapus')){ ?>
+    <script>
+    swal({
+        title: "Erorr!",
+        text: "Data Gagal Dihapus !",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
+
     <?php if ($this->session->flashdata('input')){ ?>
     <script>
     swal({
@@ -84,6 +124,7 @@
                                                 <th>Tanggal Diajukan</th>
                                                 <th>Mulai</th>
                                                 <th>Berakhir</th>
+                                                <th>Perihal Cuti</th>
                                                 <th>Status Cuti</th>
                                                 <th>Cetak Surat</th>
                                                 <th>Aksi</th>
@@ -104,6 +145,7 @@
                                         $mulai = $i['mulai'];
                                         $berakhir = $i['berakhir'];
                                         $id_status_cuti = $i['id_status_cuti'];
+                                        $perihal_cuti = $i['perihal_cuti'];
 
                                         ?>
                                             <tr>
@@ -113,7 +155,7 @@
                                                 <td><?= $tgl_diajukan ?></td>
                                                 <td><?= $mulai ?></td>
                                                 <td><?= $berakhir ?></td>
-
+                                                <td><?=$perihal_cuti?></td>
                                                 <td><?php if($id_status_cuti == 1){ ?>
                                                     <div class="table-responsive">
                                                         <div class="table table-striped table-hover ">
@@ -143,6 +185,7 @@
                                                     </div>
                                                     <?php }?>
                                                 </td>
+
                                                 <td><?php if($id_status_cuti == 2) { ?>
                                                     <a href="<?= base_url();?>Cetak/surat_cuti_pdf/<?=$id_user?>"
                                                         class="btn btn-info">
@@ -175,7 +218,7 @@
 
 
                                             </tr>
-                                            <!-- Modal Setuju Cuti -->
+                                            <!-- Modal Edit Cuti -->
                                             <div class="modal fade" id="edit<?= $id_cuti ?>" tabindex="-1"
                                                 aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog">
@@ -191,11 +234,42 @@
                                                         </div>
 
                                                         <div class="modal-body">
-                                                            <form>
+                                                            <form action="<?=base_url();?>Cuti/edit_cuti_admin"
+                                                                method="POST">
+                                                                <input type="text" value="<?=$id_cuti?>" name="id_cuti"
+                                                                    hidden>
                                                                 <div class="form-group">
                                                                     <label for="alasan">Alasan</label>
-                                                                    <input type="text" class="form-control" id="alasan"
-                                                                        name="alasan" required>
+                                                                    <textarea class="form-control" id="alasan" rows="3"
+                                                                        name="alasan" required><?=$alasan?></textarea>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="perihal_cuti">Perihal Cuti</label>
+                                                                    <input type="text" class="form-control"
+                                                                        id="perihal_cuti"
+                                                                        aria-describedby="perihal_cuti"
+                                                                        name="perihal_cuti" value="<?=$perihal_cuti?>"
+                                                                        required>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="tgl_diajukan">Tanggal Diajukan</label>
+                                                                    <input type="date" class="form-control"
+                                                                        id="tgl_diajukan"
+                                                                        aria-describedby="tgl_diajukan"
+                                                                        name="tgl_diajukan" value="<?=$tgl_diajukan?>"
+                                                                        required>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="mulai">Mulai Cuti</label>
+                                                                    <input type="date" class="form-control" id="mulai"
+                                                                        aria-describedby="mulai" name="mulai"
+                                                                        value="<?=$mulai?>" required>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="berakhir">Berakhir Cuti</label>
+                                                                    <input type="date" class="form-control"
+                                                                        id="berakhir" aria-describedby="berakhir"
+                                                                        name="berakhir" value="<?=$berakhir?>" required>
                                                                 </div>
                                                                 <button type="submit"
                                                                     class="btn btn-primary">Submit</button>
@@ -205,7 +279,7 @@
                                                 </div>
                                             </div>
 
-                                            <!-- Modal Tidak Setuju Cuti -->
+                                            <!-- Modal Hapus Cuti -->
                                             <div class="modal fade" id="hapus<?= $id_cuti ?>" tabindex="-1"
                                                 aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog">
@@ -220,7 +294,26 @@
                                                             </button>
                                                         </div>
                                                         <div class="modal-body">
+                                                            <form action="<?php echo base_url()?>Cuti/hapus_cuti_admin"
+                                                                method="post" enctype="multipart/form-data">
+                                                                <div class="row">
+                                                                    <div class="col-md-12">
+                                                                        <input type="hidden" name="id_cuti"
+                                                                            value="<?php echo $id_cuti?>" />
+                                                                        <input type="hidden" name="id_user"
+                                                                            value="<?php echo $id_user?>" />
 
+                                                                        <p>Apakah kamu yakin ingin menghapus data
+                                                                            ini?</i></b></p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-danger ripple"
+                                                                        data-dismiss="modal">Tidak</button>
+                                                                    <button type="submit"
+                                                                        class="btn btn-success ripple save-category">Ya</button>
+                                                                </div>
+                                                            </form>
                                                         </div>
                                                     </div>
                                                 </div>

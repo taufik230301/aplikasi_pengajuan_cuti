@@ -77,6 +77,44 @@ class Cuti extends CI_Controller {
 		redirect('Cuti/view_pegawai/'.$id_user);
 	}
 
+	public function hapus_cuti_admin()
+	{
+
+		$id_cuti = $this->input->post("id_cuti");
+		$id_user = $this->input->post("id_user");
+
+		$hasil = $this->m_cuti->delete_cuti($id_cuti);
+		
+		if($hasil==false){
+			$this->session->set_flashdata('eror_hapus','eror_hapus');
+		}else{
+			$this->session->set_flashdata('hapus','hapus');
+		}
+
+		redirect('Cuti/view_admin');
+	}
+
+	public function edit_cuti_admin()
+	{
+		$id_cuti = $this->input->post("id_cuti");
+		$alasan = $this->input->post("alasan");
+		$perihal_cuti = $this->input->post("perihal_cuti");
+		$tgl_diajukan = $this->input->post("tgl_diajukan");
+		$mulai = $this->input->post("mulai");
+		$berakhir = $this->input->post("berakhir");
+
+
+		$hasil = $this->m_cuti->update_cuti($alasan, $perihal_cuti, $tgl_diajukan, $mulai, $berakhir, $id_cuti);
+		
+		if($hasil==false){
+			$this->session->set_flashdata('eror_edit','eror_edit');
+		}else{
+			$this->session->set_flashdata('edit','edit');
+		}
+
+		redirect('Cuti/view_admin');
+	}
+
 	public function acc_cuti_admin($id_status_cuti)
 	{
 

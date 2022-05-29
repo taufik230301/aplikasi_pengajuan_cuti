@@ -40,19 +40,19 @@
                         <h2 class="form-title">Buat Akun</h2>
                         <div class="form-group">
                             <input type="text" class="form-input" name="username" id="username"
-                                placeholder="Your Username" />
+                                placeholder="Your Username" required/>
                         </div>
                         <div class="form-group">
-                            <input type="email" class="form-input" name="email" id="email" placeholder="Your Email" />
+                            <input type="email" class="form-input" name="email" id="email" placeholder="Your Email" required/>
                         </div>
                         <div class="form-group">
                             <input type="text" class="form-input" name="password" id="password"
-                                placeholder="Password" />
+                                placeholder="Password" required/>
                             <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
                         </div>
                         <div class="form-group">
                             <input type="password" class="form-input" name="re_password" id="re_password"
-                                placeholder="Repeat your password" />
+                                placeholder="Repeat your password" required/>
                         </div>
                         <div class="form-group">
                             <input type="submit" name="submit" id="submit" class="form-submit" value="Sign up" />

@@ -37,6 +37,17 @@ class M_cuti extends CI_Model
             return false;
     }
 
+    public function update_cuti($alasan, $perihal_cuti, $tgl_diajukan, $mulai, $berakhir, $id_cuti)
+    {
+        $this->db->trans_start();
+        $this->db->query("UPDATE cuti SET alasan='$alasan', perihal_cuti='$perihal_cuti', tgl_diajukan='$tgl_diajukan', mulai='$mulai', berakhir='$berakhir' WHERE id_cuti='$id_cuti'");
+        $this->db->trans_complete();
+        if($this->db->trans_status()==true)
+            return true;
+        else
+            return false;
+    }
+
     public function confirm_cuti($id_cuti, $id_status_cuti)
     {
         $this->db->trans_start();

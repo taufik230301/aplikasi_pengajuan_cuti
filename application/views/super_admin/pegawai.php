@@ -188,7 +188,8 @@
                                                             </button>
                                                         </div>
                                                         <div class="modal-body">
-                                                            <form action="<?php echo base_url()?>Pegawai/super_admin_hapus_pegawai"
+                                                            <form
+                                                                action="<?php echo base_url()?>Pegawai/super_admin_hapus_pegawai"
                                                                 method="post" enctype="multipart/form-data">
                                                                 <div class="row">
                                                                     <div class="col-md-12">
@@ -224,7 +225,8 @@
                                                             </button>
                                                         </div>
                                                         <div class="modal-body">
-                                                            <form action="<?=base_url();?>Pegawai/super_admin_edit_pegawai"
+                                                            <form
+                                                                action="<?=base_url();?>Pegawai/super_admin_edit_pegawai"
                                                                 method="POST">
                                                                 <input type="text" value="<?= $id_user ?>"
                                                                     name="id_user" hidden>
@@ -232,32 +234,34 @@
                                                                     <label for="username">Username</label>
                                                                     <input type="text" class="form-control"
                                                                         id="username" aria-describedby="username"
-                                                                        name="username" value="<?= $username ?>">
+                                                                        name="username" value="<?= $username ?>"
+                                                                        required>
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label for="password">Password</label>
                                                                     <input type="text" class="form-control"
                                                                         id="password" aria-describedby="password"
-                                                                        name="password" value="<?= $password ?>">
+                                                                        name="password" value="<?= $password ?>"
+                                                                        required>
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label for="email">email</label>
                                                                     <input type="text" class="form-control" id="email"
                                                                         aria-describedby="email" name="email"
-                                                                        value="<?= $email ?>">
+                                                                        value="<?= $email ?>" required>
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label for="nama_lengkap">Nama Lengkap</label>
                                                                     <input type="text" class="form-control"
                                                                         id="nama_lengkap"
                                                                         aria-describedby="nama_lengkap"
-                                                                        name="nama_lengkap"
-                                                                        value="<?= $nama_lengkap ?>">
+                                                                        name="nama_lengkap" value="<?= $nama_lengkap ?>"
+                                                                        required>
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label for="id_jenis_kelamin">Jenis Kelamin</label>
                                                                     <select class="form-control" id="id_jenis_kelamin"
-                                                                        name="id_jenis_kelamin">
+                                                                        name="id_jenis_kelamin" required>
                                                                         <?php foreach($jenis_kelamin_p as $u)
                                                                 :
                                                                 $id = $u["id_jenis_kelamin"];
@@ -273,13 +277,11 @@
                                                                     <label for="no_telp">No Telp</label>
                                                                     <input type="text" class="form-control" id="no_telp"
                                                                         aria-describedby="no_telp" name="no_telp"
-                                                                        value="<?= $no_telp ?>">
+                                                                        value="<?= $no_telp ?>" required>
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label for="alamat">Alamat</label>
-                                                                    <input type="text" class="form-control" id="alamat"
-                                                                        aria-describedby="alamat" name="alamat"
-                                                                        value="<?= $alamat ?>">
+                                                                    <textarea class="form-control" id="alamat" rows="3" name="alamat" required><?=$alamat?></textarea>
                                                                 </div>
                                                                 <button type="submit"
                                                                     class="btn btn-primary">Submit</button>
@@ -319,26 +321,26 @@
                                 <div class="form-group">
                                     <label for="username">Username</label>
                                     <input type="text" class="form-control" id="username" aria-describedby="username"
-                                        name="username">
+                                        name="username" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="password">Password</label>
                                     <input type="text" class="form-control" id="password" aria-describedby="password"
-                                        name="password">
+                                        name="password" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="email">email</label>
                                     <input type="text" class="form-control" id="email" aria-describedby="email"
-                                        name="email">
+                                        name="email" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="nama_lengkap">Nama Lengkap</label>
                                     <input type="text" class="form-control" id="nama_lengkap"
-                                        aria-describedby="nama_lengkap" name="nama_lengkap">
+                                        aria-describedby="nama_lengkap" name="nama_lengkap" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="id_jenis_kelamin">Jenis Kelamin</label>
-                                    <select class="form-control" id="id_jenis_kelamin" name="id_jenis_kelamin">
+                                    <select class="form-control" id="id_jenis_kelamin" name="id_jenis_kelamin" required>
                                         <?php foreach($jenis_kelamin_p as $u)
                                                                 :
                                                                 $id = $u["id_jenis_kelamin"];
@@ -352,12 +354,12 @@
                                 <div class="form-group">
                                     <label for="no_telp">No Telp</label>
                                     <input type="text" class="form-control" id="no_telp" aria-describedby="no_telp"
-                                        name="no_telp">
+                                        name="no_telp" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="alamat">Alamat</label>
-                                    <input type="text" class="form-control" id="alamat" aria-describedby="alamat"
-                                        name="alamat">
+                                    <textarea class="form-control" id="alamat" rows="3" name="alamat"
+                                        required></textarea>
                                 </div>
                                 <button type="submit" class="btn btn-primary">Submit</button>
                             </form>
