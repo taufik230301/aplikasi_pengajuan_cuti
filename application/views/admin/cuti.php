@@ -144,7 +144,8 @@
                                                     <?php }?>
                                                 </td>
                                                 <td><?php if($id_status_cuti == 2) { ?>
-                                                    <a href="<?= base_url();?>Cetak/surat_cuti_pdf/<?=$id_user?>" class="btn btn-info">
+                                                    <a href="<?= base_url();?>Cetak/surat_cuti_pdf/<?=$id_user?>"
+                                                        class="btn btn-info">
                                                         Cetak Surat
                                                     </a>
                                                     <?php } else {?>
@@ -157,16 +158,16 @@
                                                     <div class="table-responsive">
                                                         <div class="table table-striped table-hover ">
                                                             <a href="" class="btn btn-primary" data-toggle="modal"
-                                                                data-target="#setuju<?= $id_cuti ?>">
-                                                                <i class="fas fa-check"></i>
+                                                                data-target="#edit<?= $id_cuti ?>">
+                                                                <i class="fas fa-edit"></i>
                                                             </a>
                                                         </div>
                                                     </div>
                                                     <div class="table-responsive">
                                                         <div class="table table-striped table-hover ">
                                                             <a href="" data-toggle="modal"
-                                                                data-target="#tidak_setuju<?= $id_cuti ?>"
-                                                                class="btn btn-danger"><i class="fas fa-times"></i>
+                                                                data-target="#hapus<?= $id_cuti ?>"
+                                                                class="btn btn-danger"><i class="fas fa-trash"></i>
                                                             </a>
                                                         </div>
                                                     </div>
@@ -175,12 +176,12 @@
 
                                             </tr>
                                             <!-- Modal Setuju Cuti -->
-                                            <div class="modal fade" id="setuju<?= $id_cuti ?>" tabindex="-1"
+                                            <div class="modal fade" id="edit<?= $id_cuti ?>" tabindex="-1"
                                                 aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
-                                                            <h5 class="modal-title" id="exampleModalLabel">Setuju Data
+                                                            <h5 class="modal-title" id="exampleModalLabel">Edit Data
                                                                 Cuti
                                                             </h5>
                                                             <button type="button" class="close" data-dismiss="modal"
@@ -190,25 +191,14 @@
                                                         </div>
 
                                                         <div class="modal-body">
-                                                            <form action="<?php echo base_url()?>Cuti/acc_cuti_admin/2"
-                                                                method="post" enctype="multipart/form-data">
-                                                                <div class="row">
-                                                                    <div class="col-md-12">
-                                                                        <input type="hidden" name="id_cuti"
-                                                                            value="<?php echo $id_cuti?>" />
-                                                                        <input type="hidden" name="id_user"
-                                                                            value="<?php echo $id_user?>" />
-
-                                                                        <p>Apakah kamu yakin ingin Menyetujui Izin Cuti
-                                                                            ini?</i></b></p>
-                                                                    </div>
+                                                            <form>
+                                                                <div class="form-group">
+                                                                    <label for="alasan">Alasan</label>
+                                                                    <input type="text" class="form-control" id="alasan"
+                                                                        name="alasan" required>
                                                                 </div>
-                                                                <div class="modal-footer">
-                                                                    <button type="button" class="btn btn-danger ripple"
-                                                                        data-dismiss="modal">Tidak</button>
-                                                                    <button type="submit"
-                                                                        class="btn btn-success ripple save-category">Ya</button>
-                                                                </div>
+                                                                <button type="submit"
+                                                                    class="btn btn-primary">Submit</button>
                                                             </form>
                                                         </div>
                                                     </div>
@@ -216,12 +206,12 @@
                                             </div>
 
                                             <!-- Modal Tidak Setuju Cuti -->
-                                            <div class="modal fade" id="tidak_setuju<?= $id_cuti ?>" tabindex="-1"
+                                            <div class="modal fade" id="hapus<?= $id_cuti ?>" tabindex="-1"
                                                 aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
-                                                            <h5 class="modal-title" id="exampleModalLabel">Tolak Data
+                                                            <h5 class="modal-title" id="exampleModalLabel">Hapus Data
                                                                 Cuti
                                                             </h5>
                                                             <button type="button" class="close" data-dismiss="modal"
@@ -229,28 +219,8 @@
                                                                 <span aria-hidden="true">&times;</span>
                                                             </button>
                                                         </div>
-
                                                         <div class="modal-body">
-                                                            <form action="<?php echo base_url()?>Cuti/acc_cuti_admin/3"
-                                                                method="post" enctype="multipart/form-data">
-                                                                <div class="row">
-                                                                    <div class="col-md-12">
-                                                                        <input type="hidden" name="id_cuti"
-                                                                            value="<?php echo $id_cuti?>" />
-                                                                        <input type="hidden" name="id_user"
-                                                                            value="<?php echo $id_user?>" />
 
-                                                                        <p>Apakah kamu yakin ingin Menolak Izin Cuti
-                                                                            ini?</i></b></p>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="modal-footer">
-                                                                    <button type="button" class="btn btn-danger ripple"
-                                                                        data-dismiss="modal">Tidak</button>
-                                                                    <button type="submit"
-                                                                        class="btn btn-success ripple save-category">Ya</button>
-                                                                </div>
-                                                            </form>
                                                         </div>
                                                     </div>
                                                 </div>
