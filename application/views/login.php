@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--===============================================================================================-->
-    <link rel="icon" type="image/png" href="<?= base_url();?>assets/login/images/icons/favicon.ico" />
+    <link rel="icon" type="image/png" href="<?= base_url();?>assets/favicon.ico" />
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="<?= base_url();?>assets/login/vendor/bootstrap/css/bootstrap.min.css">
     <!--===============================================================================================-->
@@ -102,7 +102,7 @@
         <div class="container-login100">
             <div class="wrap-login100">
                 <div class="login100-pic js-tilt" data-tilt>
-                    <img src="<?= base_url();?>assets/login/images/img-01.png" alt="IMG">
+                    <img src="<?= base_url();?>assets/login/images/sumsel.png" alt="IMG">
                 </div>
 
                 <form class="login100-form validate-form" action="<?= base_url();?>Login/proses" method="POST">
