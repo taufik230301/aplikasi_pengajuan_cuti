@@ -29,36 +29,51 @@ $id_status_cuti = $i['id_status_cuti'];
 
 ?>
     <div>
-        <h5 style="text-align: center;">PEMERINTAH PROVINSI SUMATERA SELATAN</h5>
-        <h4 style="text-align: center;">BADAN PENDAPATAN DAERAH</h4>
-        <h4 style="text-align: center;">UPTB PENGELOLAAN PEDNAPATAN DAERAH</h4>
-        <h4 style="text-align: center;">WILAYAH PAGAR ALAM</h4>
-        <h5 style="text-align: center;">JL. LETNAN MUDA M. NURDIN JAIS TELP. (0730) - 623605 PAGAR ALAM</h5>
+        <table
+            style="height: 92px; margin-left: auto; margin-right: auto; width: 200px; border: none; background-color: white;">
+            <tbody>
+                <tr style="height: 113.575px;">
+                    <img style="margin-top:20px; margin-right:-100px;  margin-left:-70px;" src="<?=base_url();?>assets/login/images/sumsel.png" alt="" height="95" />
+                    <td style="width: 470px; text-align: center; height: 113.575px; border: none;">
+
+                        <h4 style="text-align: center; margin-bottom:-20px;">PEMERINTAH PROVINSI SUMATERA SELATAN</h4>
+                        <h4 style="text-align: center; margin-bottom:-20px;">BADAN PENDAPATAN DAERAH</h4>
+
+                        <h4 style="text-align: center; margin-bottom:-20px;">UPTB PENGELOLAAN PEDNAPATAN DAERAH</h4>
+                        <h4 style="text-align: center; margin-bottom:-20px;">WILAYAH PAGAR ALAM</h4>
+                        <h5 style="text-align: center; margin-bottom:10px;">JL. LETNAN MUDA M. NURDIN JAIS TELP. (0730) - 623605 PAGAR ALAM
+                        </h5>
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
         <hr />
-        <hr />
-        <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        <p style="margin-bottom:-12px">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Pagaralam,
             <?=$tgl_diajukan?></p>
-        <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        <p style="margin-bottom:-12px">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
             Kepada&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
             &nbsp; &nbsp;</p>
-        <p>Nommor &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; :&nbsp; &nbsp;
+        <p style="margin-bottom:-12px">Nommor &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; :&nbsp; &nbsp;
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
             &nbsp; &nbsp; &nbsp;&nbsp;
             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
             &nbsp; &nbsp; Yth. Kepala Badan
             Pendapatan Daerah</p>
-        <p>Lampiran&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        <p style="margin-bottom:-12px">Lampiran&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Provinsi
             Sumatera Selatan</p>
-        <p>Perihal&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; : Cuti <?=$perihal_cuti?>&nbsp; &nbsp; &nbsp;
+        <p style="margin-bottom:-12px">Perihal&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; : Cuti <?=$perihal_cuti?>&nbsp; &nbsp; &nbsp;
             &nbsp; &nbsp;
             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; di</p>
@@ -82,12 +97,11 @@ $id_status_cuti = $i['id_status_cuti'];
         <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
             Jabatan&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
             &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;: <?=$jabatan?></p>
-        <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Dikemukakan kepada Bapak/Ibu pada prinsipnya kami tidak
-            berkeberatan atas usul cuti <?=$perihal_cuti?> pegawai tersebut, mengingat cuti <?=$perihal_cuti?> dimulai
-            terhitung <?= $mulai ?>
-            s.d <?=$berakhir?> yang akan dipergunakan oleh yang berasangkutan untuk <?=$alasan?>.</p>
-
-        <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Dengan kami ajukan, namun segala pertimbangan kami serahkan kepada
+        <p style="text-align: justify">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Dikemukakan kepada Bapak/Ibu pada
+            prinsipnya kami tidak berkeberatan atas usul cuti <?=$perihal_cuti?> pegawai tersebut, mengingat cuti
+            <?=$perihal_cuti?> dimulai
+            terhitung dimulai pada <?= $mulai ?> s.d <?=$berakhir?> yang akan dipergunakan oleh yang berasangkutan untuk
+            <?=$alasan?>. Dengan kami ajukan, namun segala pertimbangan kami serahkan kepada
             Bapak/Ibu atas perhatiannya dan perkenannya diucapkan terima kasih.</p>
         <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;

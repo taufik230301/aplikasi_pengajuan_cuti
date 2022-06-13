@@ -179,7 +179,7 @@
                                                 <div class="modal-dialog">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
-                                                            <h5 class="modal-title" id="exampleModalLabel">Tolak Data
+                                                            <h5 class="modal-title" id="exampleModalLabel">Setujui Data
                                                                 Cuti
                                                             </h5>
                                                             <button type="button" class="close" data-dismiss="modal"
@@ -199,7 +199,7 @@
                                                                         <input type="hidden" name="id_user"
                                                                             value="<?php echo $id_user?>" />
 
-                                                                        <p>Apakah kamu yakin ingin Menolak Izin Cuti
+                                                                        <p>Apakah kamu yakin ingin Menyetujui Izin Cuti
                                                                             ini?</i></b></p>
                                                                     </div>
                                                                 </div>
@@ -221,7 +221,7 @@
                                                 <div class="modal-dialog">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
-                                                            <h5 class="modal-title" id="exampleModalLabel">Hapus Data
+                                                            <h5 class="modal-title" id="exampleModalLabel">Tolak Data
                                                                 Cuti
                                                             </h5>
                                                             <button type="button" class="close" data-dismiss="modal"
@@ -241,7 +241,7 @@
                                                                         <input type="hidden" name="id_user"
                                                                             value="<?php echo $id_user?>" />
 
-                                                                        <p>Apakah kamu yakin ingin Menyetujui Izin Cuti
+                                                                        <p>Apakah kamu yakin ingin Menolak Izin Cuti
                                                                             ini?</i></b></p>
                                                                     </div>
                                                                 </div>
