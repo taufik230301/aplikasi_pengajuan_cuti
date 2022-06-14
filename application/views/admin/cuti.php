@@ -188,7 +188,7 @@
 
                                                 <td><?php if($id_status_cuti == 2) { ?>
                                                     <a href="<?= base_url();?>Cetak/surat_cuti_pdf/<?=$id_user?>"
-                                                        class="btn btn-info">
+                                                        class="btn btn-info" target="_blank"> 
                                                         Cetak Surat
                                                     </a>
                                                     <?php } else {?>

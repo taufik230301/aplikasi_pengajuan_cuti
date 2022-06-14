@@ -66,9 +66,21 @@ class M_cuti extends CI_Model
         return $hasil;
     }
 
+    public function count_all_cuti_by_id($id_user)
+    {
+        $hasil = $this->db->query("SELECT COUNT(id_cuti) as total_cuti FROM cuti JOIN user ON cuti.id_user = user.id_user JOIN user_detail ON user.id_user_detail = user_detail.id_user_detail WHERE cuti.id_user='$id_user'");
+        return $hasil;
+    }
+
     public function count_all_cuti_acc()
     {
         $hasil = $this->db->query('SELECT COUNT(id_cuti) as total_cuti FROM cuti JOIN user ON cuti.id_user = user.id_user JOIN user_detail ON user.id_user_detail = user_detail.id_user_detail WHERE id_status_cuti=2');
+        return $hasil;
+    }
+
+    public function count_all_cuti_acc_by_id($id_user)
+    {
+        $hasil = $this->db->query("SELECT COUNT(id_cuti) as total_cuti FROM cuti JOIN user ON cuti.id_user = user.id_user JOIN user_detail ON user.id_user_detail = user_detail.id_user_detail WHERE id_status_cuti=2 AND cuti.id_user='$id_user'");
         return $hasil;
     }
 
@@ -78,9 +90,21 @@ class M_cuti extends CI_Model
         return $hasil;
     }
 
+    public function count_all_cuti_confirm_by_id($id_user)
+    {
+        $hasil = $this->db->query("SELECT COUNT(id_cuti) as total_cuti FROM cuti JOIN user ON cuti.id_user = user.id_user JOIN user_detail ON user.id_user_detail = user_detail.id_user_detail WHERE id_status_cuti=1 AND cuti.id_user='$id_user'");
+        return $hasil;
+    }
+
     public function count_all_cuti_reject()
     {
         $hasil = $this->db->query('SELECT COUNT(id_cuti) as total_cuti FROM cuti JOIN user ON cuti.id_user = user.id_user JOIN user_detail ON user.id_user_detail = user_detail.id_user_detail WHERE id_status_cuti=3');
+        return $hasil;
+    }
+
+    public function count_all_cuti_reject_by_id($id_user)
+    {
+        $hasil = $this->db->query("SELECT COUNT(id_cuti) as total_cuti FROM cuti JOIN user ON cuti.id_user = user.id_user JOIN user_detail ON user.id_user_detail = user_detail.id_user_detail WHERE id_status_cuti=3 AND cuti.id_user='$id_user'");
         return $hasil;
     }
 
