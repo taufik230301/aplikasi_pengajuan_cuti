@@ -68,11 +68,11 @@
                     <div class="form-group">
                         <label for="nama_lengkap">Nama Lengkap</label>
                         <input type="text" class="form-control" id="nama_lengkap" name="nama_lengkap"
-                            aria-describedby="nama_lengkap" value="<?=$nama_lengkap?>">
+                            aria-describedby="nama_lengkap" value="<?=$nama_lengkap?>" required>
                     </div>
                     <div class="form-group">
                         <label for="id_jenis_kelamin">Jenis Kelamin</label>
-                        <select class="form-control" id="id_jenis_kelamin" name="id_jenis_kelamin">
+                        <select class="form-control" id="id_jenis_kelamin" name="id_jenis_kelamin" required>
                             <?php foreach($jenis_kelamin as $u)
                                                                 :
                                                                 $id = $u["id_jenis_kelamin"];
@@ -89,23 +89,23 @@
                     </div>
                     <div class="form-group">
                         <label for="no_telp">No HP</label>
-                        <input type="text" class="form-control" id="no_telp" name="no_telp" aria-describedby="no_telp" value="<?=$no_telp?>">
+                        <input type="text" class="form-control" id="no_telp" name="no_telp" aria-describedby="no_telp" value="<?=$no_telp?>" required>
                     </div>
                     <div class="form-group">
                         <label for="nip">NIP</label>
-                        <input type="text" class="form-control" id="nip" name="nip" aria-describedby="nip" value="<?=$nip?>">
+                        <input type="text" class="form-control" id="nip" name="nip" aria-describedby="nip" value="<?=$nip?>" required>
                     </div>
                     <div class="form-group">
                         <label for="pangkat">Pangkat</label>
-                        <input type="text" class="form-control" id="pangkat" name="pangkat" aria-describedby="pangkat" value="<?=$pangkat?>">
+                        <input type="text" class="form-control" id="pangkat" name="pangkat" aria-describedby="pangkat" value="<?=$pangkat?>" required>
                     </div>
                     <div class="form-group">
                         <label for="jabatan">Jabatan</label>
-                        <input type="text" class="form-control" id="jabatan" name="jabatan" aria-describedby="jabatan" value="<?=$jabatan?>">
+                        <input type="text" class="form-control" id="jabatan" name="jabatan" aria-describedby="jabatan" value="<?=$jabatan?>" required>
                     </div>
                     <div class="form-group">
                         <label for="no_telp">Alamat</label>
-                        <textarea class="form-control" id="alamat" rows="3" name="alamat"><?=$alamat?></textarea>
+                        <textarea class="form-control" id="alamat" rows="3" name="alamat" required><?=$alamat?></textarea>
                     </div>
 
                     <button type="submit" class="btn btn-primary">Submit</button>
