@@ -38,18 +38,37 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Settings Akun</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Lengkapi Data Akun</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
+                <?php
+                                            $id = 0;
+                                            foreach($pegawai_data as $i)
+                                            :
+                                            $id++;
+                                            $id_user = $i['id_user'];
+                                            $username = $i['username'];
+                                            $password = $i['password'];
+                                            $nama_lengkap = $i['nama_lengkap'];
+                                            $id_jenis_kelamin = $i['id_jenis_kelamin'];
+                                            $email = $i['email'];
+                                            $nip = $i['nip'];
+                                            $pangkat = $i['pangkat'];
+                                            $jabatan = $i['jabatan'];
+                                            $id_jenis_kelamin = $i['id_jenis_kelamin'];
+                                            $no_telp = $i['no_telp'];
+                                            $alamat = $i['alamat'];
+
+                                            ?>
                 <form action="<?= base_url();?>Settings/lengkapi_data" method="POST">
                     <input type="text" value="<?=$this->session->userdata('id_user');?>" name="id" hidden>
                     <div class="form-group">
                         <label for="nama_lengkap">Nama Lengkap</label>
                         <input type="text" class="form-control" id="nama_lengkap" name="nama_lengkap"
-                            aria-describedby="nama_lengkap">
+                            aria-describedby="nama_lengkap" value="<?=$nama_lengkap?>">
                     </div>
                     <div class="form-group">
                         <label for="id_jenis_kelamin">Jenis Kelamin</label>
@@ -59,34 +78,39 @@
                                                                 $id = $u["id_jenis_kelamin"];
                                                                 $jenis_kelamin = $u["jenis_kelamin"];
                                                                 ?>
-                            <option value="<?= $id ?>"><?= $jenis_kelamin ?></option>
+                            <option value="<?= $id ?>" <?php if($id == $id_jenis_kelamin){
+                                                                            echo 'selected';
+                                                                        }else{
+                                                                            echo '';
+                                                                        }?>><?= $jenis_kelamin ?></option>
 
                             <?php endforeach?>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="no_telp">No HP</label>
-                        <input type="text" class="form-control" id="no_telp" name="no_telp" aria-describedby="no_telp">
+                        <input type="text" class="form-control" id="no_telp" name="no_telp" aria-describedby="no_telp" value="<?=$no_telp?>">
                     </div>
                     <div class="form-group">
                         <label for="nip">NIP</label>
-                        <input type="text" class="form-control" id="nip" name="nip" aria-describedby="nip">
+                        <input type="text" class="form-control" id="nip" name="nip" aria-describedby="nip" value="<?=$nip?>">
                     </div>
                     <div class="form-group">
                         <label for="pangkat">Pangkat</label>
-                        <input type="text" class="form-control" id="pangkat" name="pangkat" aria-describedby="pangkat">
+                        <input type="text" class="form-control" id="pangkat" name="pangkat" aria-describedby="pangkat" value="<?=$pangkat?>">
                     </div>
                     <div class="form-group">
                         <label for="jabatan">Jabatan</label>
-                        <input type="text" class="form-control" id="jabatan" name="jabatan" aria-describedby="jabatan">
+                        <input type="text" class="form-control" id="jabatan" name="jabatan" aria-describedby="jabatan" value="<?=$jabatan?>">
                     </div>
                     <div class="form-group">
                         <label for="no_telp">Alamat</label>
-                        <textarea class="form-control" id="alamat" rows="3" name="alamat"></textarea>
+                        <textarea class="form-control" id="alamat" rows="3" name="alamat"><?=$alamat?></textarea>
                     </div>
 
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
+                <?php endforeach;?>
             </div>
         </div>
     </div>

@@ -22,6 +22,7 @@ class Settings extends CI_Controller {
 	
 	public function view_pegawai()
 	{
+		$data['pegawai_data'] = $this->m_user->get_pegawai_by_id($this->session->userdata('id_user'))->result_array();
 		$data['pegawai'] = $this->m_user->get_pegawai_by_id($this->session->userdata('id_user'))->row_array();
 		$data['jenis_kelamin'] = $this->m_jenis_kelamin->get_all_jenis_kelamin()->result_array();
 		$this->load->view('pegawai/settings', $data);
@@ -40,7 +41,7 @@ class Settings extends CI_Controller {
 
 		
 
-		$hasil = $this->m_user->update_user_detail($id, $nama_lengkap, $no_telp, $alamat, $id_jenis_kelamin, $nip, $pangkat, $jabatan);
+		$hasil = $this->m_user->update_user_detail($id, $nama_lengkap, $id_jenis_kelamin, $no_telp, $alamat, $nip, $pangkat, $jabatan);
 
         if($hasil==false){
             $this->session->set_flashdata('eror','eror');

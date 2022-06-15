@@ -144,6 +144,7 @@
                                             $email = $i['email'];
                                             $nama_lengkap = $i['nama_lengkap'];
                                             $jenis_kelamin = $i['jenis_kelamin'];
+                                            $id_jenis_kelamin = $i['id_jenis_kelamin'];
                                             $no_telp = $i['no_telp'];
                                             $alamat = $i['alamat'];
 
@@ -263,7 +264,12 @@
                                                                 $id = $u["id_jenis_kelamin"];
                                                                 $jenis_kelamin = $u["jenis_kelamin"];
                                                                 ?>
-                                                                        <option value="<?= $id ?>"><?= $jenis_kelamin ?>
+                                                                        <option value="<?= $id ?>" <?php if($id == $id_jenis_kelamin){
+                                                                            echo 'selected';
+                                                                        }else{
+                                                                            echo '';
+                                                                        }?>
+                                                                        ><?= $jenis_kelamin ?>
                                                                         </option>
 
                                                                         <?php endforeach?>

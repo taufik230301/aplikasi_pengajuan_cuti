@@ -50,6 +50,7 @@ class Cuti extends CI_Controller {
 		$data['cuti'] = $this->m_cuti->get_all_cuti_by_id_user($id_user)->result_array();
 		$data['pegawai'] = $this->m_user->get_pegawai_by_id($this->session->userdata('id_user'))->row_array();
 		$data['jenis_kelamin'] = $this->m_jenis_kelamin->get_all_jenis_kelamin()->result_array();
+		$data['pegawai_data'] = $this->m_user->get_pegawai_by_id($this->session->userdata('id_user'))->result_array();
 		$this->load->view('pegawai/cuti', $data);
 
 		}else{
