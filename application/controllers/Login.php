@@ -34,6 +34,7 @@ class Login extends CI_Controller {
 					$this->session->set_userdata('id_user_level', $user['id_user_level']);
 					$this->session->set_userdata('nama_lengkap', $user['nama_lengkap']);
 					
+					$this->session->set_flashdata('success_login','success_login');
 					redirect('Dashboard/dashboard_pegawai');
 	
 				}else if($user['id_user_level'] == 2){
@@ -43,6 +44,7 @@ class Login extends CI_Controller {
 					$this->session->set_userdata('username', $user['username']);
 					$this->session->set_userdata('id_user_level', $user['id_user_level']);
 	
+					$this->session->set_flashdata('success_login','success_login');
 					redirect('Dashboard/dashboard_admin');
 	
 				}else if($user['id_user_level'] == 3){
@@ -52,6 +54,7 @@ class Login extends CI_Controller {
 					$this->session->set_userdata('username', $user['username']);
 					$this->session->set_userdata('id_user_level', $user['id_user_level']);
 	
+					$this->session->set_flashdata('success_login','success_login');
 					redirect('Dashboard/dashboard_super_admin');
 	
 				}else{
