@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 30, 2022 at 12:53 AM
+-- Generation Time: Jun 21, 2022 at 09:43 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.4.13
 
@@ -43,7 +43,9 @@ CREATE TABLE `cuti` (
 --
 
 INSERT INTO `cuti` (`id_cuti`, `id_user`, `alasan`, `tgl_diajukan`, `mulai`, `berakhir`, `id_status_cuti`, `perihal_cuti`) VALUES
-('cuti-db40b', 'ebeeaf891bcf293ec607f50475648ddc', 'melahirkan anak saya', '2022-05-18', '2022-05-20', '2022-05-27', 2, 'melahirkan');
+('cuti-714f0', '592d06bdc0ee778dab4e01d55ba8b14c', 'Karena ibu saya sakit', '2022-06-15', '2022-06-12', '2022-06-30', 1, 'Cuti Libur'),
+('cuti-99215', 'ebeeaf891bcf293ec607f50475648ddc', 'menemani ibu saya yang sakit, sekarang beliau masih berada dirumah sakit dan butuh saya temani selama seminggu.', '2022-06-06', '2022-06-06', '2022-06-15', 2, 'berobat'),
+('cuti-ede81', 'dce802a5e29e9ccabc144dfb6a37abbb', 'Liburan ke lampung', '2022-06-21', '2022-06-21', '2022-06-21', 2, 'Cuti Libur');
 
 -- --------------------------------------------------------
 
@@ -104,11 +106,10 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id_user`, `username`, `password`, `email`, `id_user_level`, `id_user_detail`) VALUES
-('0b1aa079d0d2a29f731cf7fe3681cea9', 'kresna', 'kresna123', 'kresna123@gmail.com', 1, '0b1aa079d0d2a29f731cf7fe3681cea9'),
 ('134e349e4f50a051d8ca3687d6a7de1a', 'admin_utama', 'admin_utama', 'admin_utama@gmail.com', 2, '134e349e4f50a051d8ca3687d6a7de1a'),
-('592d06bdc0ee778dab4e01d55ba8b14c', 'pegawai', 'pegawai123', 'pegawai@gmail.com', 1, '592d06bdc0ee778dab4e01d55ba8b14c'),
 ('98eb4077470a60a0fe0f7b9d01755557', 'admin', 'admin123', 'ika@gmail.com', 2, '98eb4077470a60a0fe0f7b9d01755557'),
-('ebeeaf891bcf293ec607f50475648ddc', 'Taufiiqulhakim', 'taufik23', 'taufiiqulhakim23@gmail.com', 1, 'ebeeaf891bcf293ec607f50475648ddc'),
+('c551fc8847d29dc25a23db5d2cdb941b', 'rian', '123', 'rian@gmail.com', 1, 'c551fc8847d29dc25a23db5d2cdb941b'),
+('dce802a5e29e9ccabc144dfb6a37abbb', 'ika', 'ika123', 'ika@gmail.com', 1, 'dce802a5e29e9ccabc144dfb6a37abbb'),
 ('f5972fbf4ef53843c1e12c3ae99e5005', 'super_admin', 'super_admin', 'kresna123@gmail.com', 3, 'f5972fbf4ef53843c1e12c3ae99e5005');
 
 -- --------------------------------------------------------
@@ -133,11 +134,10 @@ CREATE TABLE `user_detail` (
 --
 
 INSERT INTO `user_detail` (`id_user_detail`, `nama_lengkap`, `id_jenis_kelamin`, `no_telp`, `alamat`, `nip`, `pangkat`, `jabatan`) VALUES
-('0b1aa079d0d2a29f731cf7fe3681cea9', 'Kresna Vespri', 1, '0812717281', 'Jl. Sekip', NULL, NULL, NULL),
 ('134e349e4f50a051d8ca3687d6a7de1a', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('592d06bdc0ee778dab4e01d55ba8b14c', 'Taufiiqulhakim', 1, '+62812781728', 'Jl. Sekip', NULL, NULL, NULL),
 ('98eb4077470a60a0fe0f7b9d01755557', NULL, 1, NULL, NULL, NULL, NULL, NULL),
-('ebeeaf891bcf293ec607f50475648ddc', 'Taufiiqulhakim', 2147483647, 'Jl. Sekip', '1', '01728172198', 'Golo 1', 'Bos'),
+('c551fc8847d29dc25a23db5d2cdb941b', 'malian', 2, '+62812781728', 'Jl. Sekip', '2019220028', 'Golo 1', 'Bos'),
+('dce802a5e29e9ccabc144dfb6a37abbb', 'TaufiiqulhakimIKAAA', 2, '+62812781728', 'Jl. Sekip', '1111', 'Golo 1', 'Bos'),
 ('f5972fbf4ef53843c1e12c3ae99e5005', NULL, 1, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
