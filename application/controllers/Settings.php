@@ -49,8 +49,102 @@ class Settings extends CI_Controller {
 		}else{
 			$this->session->set_flashdata('input','input');
 			redirect('Settings/view_pegawai');
-        }
+		}
+		
+	}
 
+	
+	public function settings_account_super_admin()
+	{
+		$id = $this->session->userdata('id_user');
+		$username = $this->input->post("username");
+		$password = $this->input->post("password");
+		$re_password = $this->input->post("re_password");
+
+		// echo var_dump($id);
+		// echo var_dump($username);
+		// echo var_dump($password);
+		// echo var_dump($re_password);
+		// die();
+
+		if($password == $re_password)
+        {
+            $hasil = $this->m_user->update_user($id, $username, $password);
+
+            if($hasil==false){
+                $this->session->set_flashdata('eror_edit','eror_edit');
+                redirect('Settings/view_super_admin');
+			}else{
+				$this->session->set_flashdata('edit','edit');
+				redirect('Settings/view_super_admin');
+			}
+			
+        }else{
+            $this->session->set_flashdata('password_err','password_err');
+			redirect('Settings/view_super_admin');
+        }
+	}
+
+	public function settings_account_admin()
+	{
+		$id = $this->session->userdata('id_user');
+		$username = $this->input->post("username");
+		$password = $this->input->post("password");
+		$re_password = $this->input->post("re_password");
+
+		// echo var_dump($id);
+		// echo var_dump($username);
+		// echo var_dump($password);
+		// echo var_dump($re_password);
+		// die();
+
+		if($password == $re_password)
+        {
+            $hasil = $this->m_user->update_user($id, $username, $password);
+
+            if($hasil==false){
+                $this->session->set_flashdata('eror_edit','eror_edit');
+                redirect('Settings/view_admin');
+			}else{
+				$this->session->set_flashdata('edit','edit');
+				redirect('Settings/view_admin');
+			}
+			
+        }else{
+            $this->session->set_flashdata('password_err','password_err');
+			redirect('Settings/view_admin');
+        }
+	}
+
+	public function settings_account_pegawai()
+	{
+		$id = $this->session->userdata('id_user');
+		$username = $this->input->post("username");
+		$password = $this->input->post("password");
+		$re_password = $this->input->post("re_password");
+
+		// echo var_dump($id);
+		// echo var_dump($username);
+		// echo var_dump($password);
+		// echo var_dump($re_password);
+		// die();
+
+		if($password == $re_password)
+        {
+            $hasil = $this->m_user->update_user($id, $username, $password);
+
+            if($hasil==false){
+                $this->session->set_flashdata('eror_edit','eror_edit');
+                redirect('Settings/view_pegawai');
+			}else{
+				$this->session->set_flashdata('edit','edit');
+				redirect('Settings/view_pegawai');
+			}
+			
+        }else{
+            $this->session->set_flashdata('password_err','password_err');
+			redirect('Settings/view_pegawai');
+        }
 	}
     
 }

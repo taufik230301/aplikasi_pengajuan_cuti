@@ -6,6 +6,33 @@
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
+    <?php if ($this->session->flashdata('password_err')){ ?>
+    <script>
+    swal({
+        title: "Error Password!",
+        text: "Ketik Ulang Password!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
+    <?php if ($this->session->flashdata('edit')){ ?>
+    <script>
+    swal({
+        title: "Success!",
+        text: "Data Berhasil Diedit!",
+        icon: "success"
+    });
+    </script>
+    <?php } ?>
+    <?php if ($this->session->flashdata('eror_edit')){ ?>
+    <script>
+    swal({
+        title: "Erorr!",
+        text: "Data Gagal Diedit!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
     <div class="wrapper">
 
         <!-- Preloader -->
@@ -45,20 +72,20 @@
             <section class="content">
                 <div class="container-fluid">
 
-                    <form>
+                    <form action="<?=base_url();?>Settings/settings_account_super_admin" method="POST">
                         <div class="form-group">
                             <label for="username">Username</label>
-                            <input type="text" class="form-control" id="username"
+                            <input type="text" class="form-control" id="username" name="username"
                                 aria-describedby="Username" required>
                         </div>
                         <div class="form-group">
                             <label for="password">Password</label>
-                            <input type="text" class="form-control" id="password"
+                            <input type="password" class="form-control" id="password" name="password"
                                 aria-describedby="password" required>
                         </div>
                         <div class="form-group">
                             <label for="re_password">Ulangi Password</label>
-                            <input type="text" class="form-control" id="re_password"
+                            <input type="password" class="form-control" id="re_password" name="re_password"
                                 aria-describedby="re_password" required>
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>

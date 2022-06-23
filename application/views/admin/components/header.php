@@ -26,7 +26,7 @@
 <!-- summernote -->
 <link rel="stylesheet" href="<?= base_url();?>assets/admin_lte/plugins/summernote/summernote-bs4.min.css">
 <!-- Sweetalert -->
-<script src="<?= base_url() ?>node_modules/sweetalert/dist/sweetalert.min.js"></script>
+<script src="<?= base_url(); ?>node_modules/sweetalert/dist/sweetalert.min.js"></script>
 <!-- DataTables -->
 <link rel="stylesheet" href="<?= base_url();?>assets/admin_lte/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
 <link rel="stylesheet" href="<?= base_url();?>assets/admin_lte/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">

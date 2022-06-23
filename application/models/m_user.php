@@ -118,11 +118,11 @@ class M_user extends CI_Model
             return false;
     }
 
-    public function update_user($id, $username, $email, $password, $id_user_level)
+    public function update_user($id, $username, $password)
     {
        $this->db->trans_start();
 
-       $this->db->query("UPDATE user SET username='$username', password='$password', email='$email', id_user_level='$id_user_level' WHERE id_user='$id'");
+       $this->db->query("UPDATE user SET username='$username', password='$password' WHERE id_user='$id'");
       
        $this->db->trans_complete();
         if($this->db->trans_status()==true)
@@ -130,6 +130,8 @@ class M_user extends CI_Model
         else
             return false;
     }
+
+    
 
     public function delete_admin($id)
     {
