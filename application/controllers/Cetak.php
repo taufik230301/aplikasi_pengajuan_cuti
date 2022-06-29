@@ -8,9 +8,9 @@ class Cetak extends CI_Controller {
         parent::__construct();
 		$this->load->model('m_cuti');
     }
-    public function surat_cuti_pdf($id_user){
+    public function surat_cuti_pdf($id_cuti){
 
-        $data['cuti'] = $this->m_cuti->get_all_cuti_by_id_user($id_user)->result_array();
+        $data['cuti'] = $this->m_cuti->get_all_cuti_by_id_cuti($id_cuti)->result_array();
     
         $this->load->library('pdf');
     
