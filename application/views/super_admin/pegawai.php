@@ -96,10 +96,10 @@
                                 <li class="breadcrumb-item active">Pegawai</li>
                             </ol>
                         </div><!-- /.col -->
-                        <button type="button" class="btn btn-primary mt-3" data-toggle="modal"
+                        <!-- <button type="button" class="btn btn-primary mt-3" data-toggle="modal"
                             data-target="#exampleModal">
                             Tambah Pegawai
-                        </button>
+                        </button> -->
                         <br>
                     </div><!-- /.row -->
                 </div><!-- /.container-fluid -->
@@ -128,7 +128,7 @@
                                                 <th>Jenis Kelamin</th>
                                                 <th>No Telp</th>
                                                 <th>Alamat</th>
-                                                <th>Aksi</th>
+                                                <!-- <th>Aksi</th> -->
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -155,7 +155,7 @@
                                                 <td><?= $jenis_kelamin ?></td>
                                                 <td><?= $no_telp ?></td>
                                                 <td><?= $alamat ?></td>
-                                                <td>
+                                                <!-- <td>
                                                     <div class="table-responsive">
                                                         <div class="table table-striped table-hover ">
                                                             <a href="" class="btn btn-primary" data-toggle="modal"
@@ -172,7 +172,7 @@
                                                             </a>
                                                         </div>
                                                     </div>
-                                                </td>
+                                                </td> -->
                                             </tr>
                                             <!-- Modal Hapus Data Pegawai -->
                                             <div class="modal fade" id="hapus<?= $id_user ?>" tabindex="-1"
