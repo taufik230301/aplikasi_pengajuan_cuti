@@ -49,7 +49,7 @@
                 <li class="nav-item" style="<?php echo  $pegawai['nama_lengkap'] == '' ? 'display:none;' : ' ' ?>">
                     <a href="<?= base_url();?>Form_Cuti/view_pegawai" class="nav-link">
                         <i class="nav-icon fas fa-edit"></i>
-                        <p>Pengajuan Cuti</p>
+                        <p>Permohonan Cuti</p>
                     </a>
                 </li>
                 <li class="nav-item">
