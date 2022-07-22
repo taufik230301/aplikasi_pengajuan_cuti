@@ -166,14 +166,14 @@
                                                 </td>
 
                                             </tr>
-                                            <!-- Modal Hapus Data Pegawai -->
+                                            <!-- Modal Hapus Data Admin -->
                                             <div class="modal fade" id="hapus<?= $id_user ?>" tabindex="-1"
                                                 aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
                                                             <h5 class="modal-title" id="exampleModalLabel">Hapus Data
-                                                                Pegawai
+                                                                Admin
                                                             </h5>
                                                             <button type="button" class="close" data-dismiss="modal"
                                                                 aria-label="Close">
@@ -202,14 +202,14 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <!-- Modal Tambah Pegawai -->
+                                            <!-- Modal Tambah Admin -->
                                             <div class="modal fade" id="edit_data_admin<?=$id_user?>" tabindex="-1"
                                                 aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
                                                             <h5 class="modal-title" id="exampleModalLabel">Edit
-                                                                Pegawai</h5>
+                                                                Admin</h5>
                                                             <button type="button" class="close" data-dismiss="modal"
                                                                 aria-label="Close">
                                                                 <span aria-hidden="true">&times;</span>
@@ -261,13 +261,13 @@
                 </div><!-- /.container-fluid -->
             </section>
             <!-- /.content -->
-            <!-- Modal Tambah Pegawai -->
+            <!-- Modal Tambah Admin -->
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                 aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Tambah Pegawai</h5>
+                            <h5 class="modal-title" id="exampleModalLabel">Tambah Admin</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>

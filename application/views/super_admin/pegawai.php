@@ -133,10 +133,10 @@
                                         </thead>
                                         <tbody>
                                             <?php
-                                            $id = 0;
+                                            $no = 0;
                                             foreach($pegawai as $i)
                                             :
-                                            $id++;
+                                            $no++;
                                             $id_user = $i['id_user'];
                                             $username = $i['username'];
                                             $password = $i['password'];
@@ -149,7 +149,7 @@
 
                                             ?>
                                             <tr>
-                                                <td><?= $id ?></td>
+                                                <td><?= $no ?></td>
                                                 <td><?= $username ?></td>
                                                 <td><?= $nama_lengkap ?></td>
                                                 <td><?= $jenis_kelamin ?></td>
